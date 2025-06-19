@@ -1,0 +1,120 @@
+---
+import ghIcon from '../assets/logos/gh.svg'
+import linkedInIcon from '../assets/logos/linkedin.svg';
+import { version } from '../../package.json';
+import { Image } from 'astro:assets';
+
+type Link = {
+    name: string;
+    url: string;
+};
+
+type LinkSection = {
+    name: string;
+    links: Link[];
+};
+
+const links: LinkSection[] = [
+];
+
+const socials = [
+    { name: 'GitHub', url: 'https://github.com/jkutkut', icon: ghIcon },
+    { name: 'LinkedIn', url: 'https://linkedin.com/in/jkutkut', icon: linkedInIcon },
+];
+---
+<footer>
+    {links.length > 0 && <div class="links">
+        {links.map(section => (
+            <div class="section">
+                <h3>{section.name}</h3>
+                <ul>
+                    {section.links.map(link => (
+                        <li>
+                            <a href={link.url}>{link.name}</a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        ))}
+    </div>}
+    <div class="contact">
+        {socials.map(social => (
+            <a href={social.url} target="_blank" rel="noopener noreferrer">
+                {social.name}
+                <Image src={social.icon} alt={social.name} width={24} height={24} />
+            </a>
+        ))}
+    </div>
+    <div class="footer-info">
+        <div class="portfolio-info">
+            <p>
+                Portfolio
+                <a href="https://jkutkut.com/portfolio" target="_blank" rel="noopener noreferrer">
+                    v{version}
+                </a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<style>
+footer {
+    background: #c9c9c9;
+    padding: 1rem;
+    margin: 0;
+}
+footer > div {
+    padding-top: 1rem;
+}
+footer > div:first-child {
+    padding-top: 0;
+}
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 2rem;
+}
+ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            margin-left: 0.5rem;
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+.footer-info {
+    padding: 0;
+}
+.portfolio-info {
+    border-top: 1px solid #000;
+    text-align: start;
+    padding-top: 1rem;
+
+    p {
+        margin: 0;
+    }
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+</style>
