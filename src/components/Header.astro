@@ -18,11 +18,11 @@ const routes: Route[] = Astro.props.routes || [];
     <nav>
         <ul>
             {routes.map((route) => (
-                <a href={route.path}>
-                    <li>
+                <li>
+                    <a href={route.path}>
                         {route.title}
-                    </li>
-                </a>
+                    </a>
+                </li>
             ))}
         </ul>
     </nav>
