@@ -1,12 +1,14 @@
 {
   "name": "",
   "type": "module",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "updateData": "npx tsx ./src/data/updateData.ts",
+    "cleanData": "rm -rf ./data"
   },
   "dependencies": {
     "astro": "^5.9.2"
