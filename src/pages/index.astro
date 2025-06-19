@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
 import Footer from "../components/Footer.astro";
 ---
 
@@ -8,5 +9,15 @@ import Footer from "../components/Footer.astro";
     <Header routes={[
         { path: "/", title: "Home" },
     ]} />
+    <main>
+        <Hero
+            title="Backend Developer"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            links={[
+                { href: "/projects", text: "View my work", type: "primary" },
+                { href: "/contact", text: "Get in touch", type: "secondary" }
+            ]}
+        />
+    </main>
     <Footer />
 </Layout>
