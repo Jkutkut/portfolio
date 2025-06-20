@@ -1,14 +1,15 @@
 {
   "name": "portfolio",
   "type": "module",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "updateData": "npx tsx ./src/data/updateData.ts",
-    "cleanData": "rm -rf ./data"
+    "cleanData": "rm -rf ./data",
+    "prepareCommit": "${EDITOR} package.json && npm i --package-lock-only && git add -N . && git add -p"
   },
   "dependencies": {
     "astro": "^5.9.2"
