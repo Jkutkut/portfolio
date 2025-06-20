@@ -1,6 +1,6 @@
-import type { RepoData, RepoIdentifier } from './types';
+import type { RepoData, RepoReference } from './types';
 
-export const fetchRepository = async (repo: RepoIdentifier): Promise<RepoData | null> => {
+export const fetchRepository = async (repo: RepoReference): Promise<RepoData | null> => {
     const { usr, repoName } = repo;
     if (!usr || !repoName) {
         console.warn(`Invalid repository identifier: ${usr}/${repoName}`);
@@ -18,16 +18,22 @@ export const fetchRepository = async (repo: RepoIdentifier): Promise<RepoData | 
         return null;
     }
     const data = await response.json();
+    const description = repo.description ?? data.description;
+    const highlights = repo.highlights ?? [];
+    const tags = data.topics ?? [];
+    const links = repo.links ?? [];
     return {
         name: data.name,
-        description: data.description,
-        topics: data.topics ?? [],
+        description,
+        highlights,
+        tags: tags,
         full_name: data.full_name,
         url: data.html_url,
+        links
     } as RepoData;
 }
 
-export async function fetchRepositories(repos: RepoIdentifier[]): Promise<RepoData[]> {
+export async function fetchRepositories(repos: RepoReference[]): Promise<RepoData[]> {
     const allData = await Promise.all(
         repos.map(fetchRepository)
     );
