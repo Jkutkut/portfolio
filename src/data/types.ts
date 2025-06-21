@@ -1,7 +1,12 @@
-export interface Links { // TODO use this interface across all code
+export interface Link {
   type?: 'docs';
   url: string;
   text: string;
+}
+
+export enum LinkTarget {
+  Self = '_self',
+  Blank = '_blank',
 }
 
 export interface RepoReference {
@@ -12,7 +17,7 @@ export interface RepoReference {
   // Independent from the repo
   highlights?: string[];
   description?: string;
-  links?: Links[];
+  links?: Link[];
 }
 
 export type RepoData = { // TODO use astro content type
@@ -22,5 +27,5 @@ export type RepoData = { // TODO use astro content type
   description: string;
   highlights: string[];
   tags: string[];
-  links: Links[];
+  links: Link[];
 };

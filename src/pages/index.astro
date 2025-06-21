@@ -8,15 +8,15 @@ import Projects from "../components/Projects.astro";
 
 <Layout>
     <Header routes={[
-        { path: "/", title: "Home" },
+        { url: "/", text: "Home" },
     ]} />
     <main>
         <Hero
             title="Backend Developer"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             links={[
-                { href: "/projects", text: "View my work", type: "primary" },
-                { href: "/contact", text: "Get in touch", type: "secondary" }
+                { url: "/projects", text: "View my work", linkType: "primary" },
+                { url: "/contact", text: "Get in touch", linkType: "secondary" }
             ]}
         />
         <Projects />

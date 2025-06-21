@@ -1,26 +1,29 @@
 ---
-interface Link {
-    href: string;
-    text: string;
-    type: 'primary' | 'secondary';
+import type { Link } from "../data/types";
+import LinkBtn from "./LinkBtn.astro";
+
+type LinkHero = Link & {
+    linkType: 'primary' | 'secondary';
+};
+interface Props {
+    title: string;
+    description: string;
+    links: LinkHero[];
 }
 
 const {
     title,
     description,
     links
-} = Astro.props;
+}: Props = Astro.props;
 ---
 <section class="hero">
     <div class="hero-content">
         <h1>{title}</h1>
         <p>{description}</p>
         <div class="hero-buttons">
-            {links.map((link: Link) => (
-                <a href={link.href}
-                    class={`btn btn-${link.type}`}>
-                    {link.text}
-                </a>
+            {links.map((link: LinkHero) => (
+                <LinkBtn link={link} class:list={[`btn`, `btn-${link.linkType}`]}/>
             ))}
         </div>
     </div>

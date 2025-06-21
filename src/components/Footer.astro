@@ -3,11 +3,9 @@ import ghIcon from '../assets/logos/gh.svg'
 import linkedInIcon from '../assets/logos/linkedin.svg';
 import { version } from '../../package.json';
 import { Image } from 'astro:assets';
-
-type Link = {
-    name: string;
-    url: string;
-};
+import LinkBtn from './LinkBtn.astro';
+import type { Link } from '../data/types';
+import type { ImageMetadata } from 'astro';
 
 type LinkSection = {
     name: string;
@@ -15,11 +13,20 @@ type LinkSection = {
 };
 
 const links: LinkSection[] = [
+    {
+        name: 'About',
+        links: [
+            { text: 'About Me', url: '/about' },
+            { text: 'Contact', url: '/contact' },
+            { text: 'Blog', url: '/blog' },
+        ],
+    }
 ];
 
-const socials = [
-    { name: 'GitHub', url: 'https://github.com/jkutkut', icon: ghIcon },
-    { name: 'LinkedIn', url: 'https://linkedin.com/in/jkutkut', icon: linkedInIcon },
+type SocialLink = Link & { icon: ImageMetadata };
+const socials: SocialLink[] = [
+    { text: 'GitHub', url: 'https://github.com/jkutkut', icon: ghIcon },
+    { text: 'LinkedIn', url: 'https://linkedin.com/in/jkutkut', icon: linkedInIcon },
 ];
 ---
 <footer>
@@ -30,7 +37,7 @@ const socials = [
                 <ul>
                     {section.links.map(link => (
                         <li>
-                            <a href={link.url}>{link.name}</a>
+                            <LinkBtn link={link}></LinkBtn>
                         </li>
                     ))}
                 </ul>
@@ -39,19 +46,17 @@ const socials = [
     </div>}
     <div class="contact">
         {socials.map(social => (
-            <a href={social.url} target="_blank" rel="noopener noreferrer">
-                {social.name}
-                <Image src={social.icon} alt={social.name} width={24} height={24} />
-            </a>
+            <LinkBtn link={social}>
+                {social.text}
+                <Image src={social.icon} alt={social.text} width={24} height={24} />
+            </LinkBtn>
         ))}
     </div>
     <div class="footer-info">
         <div class="portfolio-info">
             <p>
                 Portfolio
-                <a href="https://jkutkut.com/portfolio" target="_blank" rel="noopener noreferrer">
-                    v{version}
-                </a>
+                <LinkBtn link={{ text: `v${version}`, url: 'https://jkutkut.com/portfolio' }}/>
             </p>
         </div>
     </div>
@@ -92,8 +97,6 @@ ul {
         align-items: center;
         img {
             margin-left: 0.5rem;
-            width: 24px;
-            height: 24px;
         }
     }
 }
@@ -108,13 +111,5 @@ ul {
     p {
         margin: 0;
     }
-}
-
-a {
-    color: #000;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
 }
 </style>
