@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "type": "module",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -12,6 +12,7 @@
     "prepareCommit": "${EDITOR} package.json && npm i --package-lock-only && git add -N . && git add -p"
   },
   "dependencies": {
-    "astro": "^5.9.2"
+    "astro": "^5.9.2",
+    "marked": "^15.0.12"
   }
 }

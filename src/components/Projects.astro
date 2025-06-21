@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content"
+import { marked } from "marked"
 
 const repos = await getCollection('repos');
 ---
@@ -9,7 +10,7 @@ const repos = await getCollection('repos');
         {repos.sort((a, b) => a.data.name.localeCompare(b.data.name)).map(repo => (
             <li class="project">
                 <h3>{repo.data.name}</h3>
-                <p>{repo.data.description}</p>
+                <div class="description" set:html={marked(repo.data.description)}></div>
                 {repo.data.highlights && repo.data.highlights.length > 0 && (
                     <ul class="highlights">
                         {repo.data.highlights.map(highlight => (
