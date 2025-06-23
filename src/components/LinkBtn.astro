@@ -21,7 +21,7 @@ const slotHasContent = !!Astro.slots.default;
 <a
     href={href} target={target}
     rel={rel}
-    class={classes.length ? classes.join(' ') : undefined}
+    class={classes.length > 0 ? classes.join(' ') : undefined}
     title={text}
 >
     {slotHasContent ? <slot /> : text}

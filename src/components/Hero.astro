@@ -26,7 +26,7 @@ const {
         <p>{description}</p>
         <div class="hero-buttons">
             {links.map((link: LinkHero) => (
-                <LinkBtn link={link} class:list={[`btn`, `btn-${link.linkType}`]}/>
+                <LinkBtn link={link} classes={[`btn`, `btn-${link.linkType}`]}/>
             ))}
         </div>
         <div class="socials">
@@ -69,5 +69,12 @@ const {
 .btn.btn-secondary {
     color: white;
     background: #6c757d;
+}
+.socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 </style>
