@@ -1,5 +1,6 @@
 ---
-import type { Link } from "../data/types";
+import { Image } from "astro:assets";
+import type { Link, SocialLink } from "../data/types";
 import LinkBtn from "./LinkBtn.astro";
 
 type LinkHero = Link & {
@@ -9,12 +10,14 @@ interface Props {
     title: string;
     description: string;
     links: LinkHero[];
+    socials: SocialLink[];
 }
 
 const {
     title,
     description,
-    links
+    links,
+    socials
 }: Props = Astro.props;
 ---
 <section class="hero">
@@ -24,6 +27,13 @@ const {
         <div class="hero-buttons">
             {links.map((link: LinkHero) => (
                 <LinkBtn link={link} class:list={[`btn`, `btn-${link.linkType}`]}/>
+            ))}
+        </div>
+        <div class="socials">
+            {socials.map(social => (
+                <LinkBtn link={social}>
+                    <Image src={social.icon} alt={social.text} width={24} height={24} />
+                </LinkBtn>
             ))}
         </div>
     </div>

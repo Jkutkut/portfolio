@@ -4,10 +4,17 @@ export interface Link {
   text: string;
 }
 
+export type SocialLink = Link & { icon: ImageMetadata };
+
 export enum LinkTarget {
   Self = '_self',
   Blank = '_blank',
 }
+
+export type LinkSection = {
+    name: string;
+    links: Link[];
+};
 
 export interface RepoReference {
   type: 'github';

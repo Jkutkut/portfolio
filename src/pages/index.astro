@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import Footer from "../components/Footer.astro";
 import Projects from "../components/Projects.astro";
+import { SOCIAL_LINKS } from "../constants"
 ---
 
 <Layout>
@@ -18,8 +19,21 @@ import Projects from "../components/Projects.astro";
                 { url: "/projects", text: "View my work", linkType: "primary" },
                 { url: "/contact", text: "Get in touch", linkType: "secondary" }
             ]}
+            socials={SOCIAL_LINKS}
         />
         <Projects />
     </main>
-    <Footer />
+    <Footer
+        sections={[
+            {
+                name: 'About',
+                links: [
+                    { text: 'About Me', url: '/about' },
+                    { text: 'Contact', url: '/contact' },
+                    { text: 'Blog', url: '/blog' },
+                ],
+            }
+        ]}
+        socials={SOCIAL_LINKS}
+    />
 </Layout>

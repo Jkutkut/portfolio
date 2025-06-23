@@ -1,6 +1,19 @@
-import type { RepoReference } from "./data/types";
+import { version } from '../package.json';
+import type { Link, RepoReference, SocialLink } from "./data/types";
+import ghIcon from './assets/logos/gh.svg'
+import linkedInIcon from './assets/logos/linkedin.svg';
 
 export const TITLE: string = 'Jkutkut';
+
+export const REPO_LINK: Link = {
+    text: `v${version}`,
+    url: 'https://jkutkut.com/portfolio'
+};
+
+export const SOCIAL_LINKS: SocialLink[] = [
+    { text: 'GitHub', url: 'https://github.com/jkutkut', icon: ghIcon },
+    { text: 'LinkedIn', url: 'https://linkedin.com/in/jkutkut', icon: linkedInIcon },
+];
 
 // External data:
 export const repos: RepoReference[] = [
