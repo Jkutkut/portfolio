@@ -5,7 +5,7 @@ import LinkBtn from "./LinkBtn.astro";
 
 const repos = await getCollection('repos');
 ---
-<section class="projects">
+<section id="projects" class="projects">
     <h2>Projects</h2>
     <ul>
         {repos.sort((a, b) => a.data.name.localeCompare(b.data.name)).map(repo => (

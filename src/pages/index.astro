@@ -9,7 +9,8 @@ import { SOCIAL_LINKS } from "../constants/socials"
 
 <Layout>
     <Header routes={[
-        { url: "/", text: "Home" },
+        { url: "#", text: "Home" },
+        { url: "#projects", text: "Projects",  },
     ]} />
     <main>
         <Hero
@@ -26,11 +27,17 @@ import { SOCIAL_LINKS } from "../constants/socials"
     <Footer
         sections={[
             {
-                name: 'About',
+                name: 'More projects',
                 links: [
-                    { text: 'About Me', url: '/about' },
-                    { text: 'Contact', url: '/contact' },
-                    { text: 'Blog', url: '/blog' },
+                    { text: 'JkutkutOrg', url: 'https://github.com/jkutkutOrg' },
+                    { text: 'JkutkutArchive', url: 'https://github.com/jkutkutArchive' },
+                ],
+            },
+            {
+                name: 'Say Hello',
+                links: [
+                    { text: 'LinkedIn', url: 'https://linkedin.com/in/jkutkut' },
+                    { text: 'jorgeregonzalezwork@gmail.com', url: 'mailto:jorgeregonzalezwork@gmail.com' },
                 ],
             }
         ]}

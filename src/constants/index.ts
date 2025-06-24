@@ -38,4 +38,8 @@ export const repos: RepoReference[] = [
     type: 'github',
     usr: 'jkutkut', repoName: 'osmia-vscode',
   },
+  {
+    type: 'github',
+    usr: 'jkutkutOrg', repoName: 'EatUp',
+  }
 ];

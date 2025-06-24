@@ -10,13 +10,16 @@ type Props = {
 
 const {
     link,
-    target = LinkTarget.Blank,
     rel = 'noopener noreferrer',
     classes = [],
 } = Astro.props;
-
+let { target = LinkTarget.Blank } = Astro.props;
 const { text, url: href } = link;
 const slotHasContent = !!Astro.slots.default;
+
+if (href && href.startsWith('#')) {
+    target = LinkTarget.Self;
+}
 ---
 <a
     href={href} target={target}
