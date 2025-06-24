@@ -1,7 +1,5 @@
-import { version } from '../package.json';
-import type { Link, RepoReference, SocialLink } from "./data/types";
-import ghIcon from './assets/logos/gh.svg'
-import linkedInIcon from './assets/logos/linkedin.svg';
+import { version } from '../../package.json';
+import type { Link, RepoReference } from "../types";
 
 export const TITLE: string = 'Jkutkut';
 
@@ -10,17 +8,15 @@ export const REPO_LINK: Link = {
     url: 'https://jkutkut.com/portfolio'
 };
 
-export const SOCIAL_LINKS: SocialLink[] = [
-    { text: 'GitHub', url: 'https://github.com/jkutkut', icon: ghIcon },
-    { text: 'LinkedIn', url: 'https://linkedin.com/in/jkutkut', icon: linkedInIcon },
-];
-
 // External data:
 export const repos: RepoReference[] = [
   {
     type: 'github',
     usr: 'jkutkut', repoName: 'osmia',
     highlights: [
+      'Test runner for Node.js',
+      'Supports Mocha, Jest, and Vitest',
+      'Built-in support for TypeScript',
     ],
     links: [
       {

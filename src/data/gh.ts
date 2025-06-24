@@ -1,4 +1,4 @@
-import type { RepoData, RepoReference } from './types';
+import type { RepoData, RepoReference } from '../types';
 
 const fetchReadmeDescriptionOr = async (repo: RepoReference, defaultDescription: string): Promise<string> => {
     console.info(` - Fetching README for ${repo.usr}/${repo.repoName}`);
