@@ -2,43 +2,42 @@
 import { getCollection } from "astro:content"
 import { marked } from "marked"
 import LinkBtn from "./LinkBtn.astro";
+import RepoTag from "./RepoTag.astro";
 
 const repos = await getCollection('repos');
 ---
 <section id="projects" class="projects">
     <h2>Projects</h2>
-    <ul>
-        {repos.sort((a, b) => a.data.name.localeCompare(b.data.name)).map(repo => (
-            <li class="project">
-                <h3>{repo.data.name}</h3>
-                <div class="description" set:html={marked(repo.data.description)}></div>
-                {repo.data.highlights && repo.data.highlights.length > 0 && (
-                    <ul class="highlights">
-                        {repo.data.highlights.map(highlight => (
-                            <li>{highlight}</li>
-                        ))}
-                    </ul>
-                )}
-                <div class="tags">
-                    {repo.data.tags.map(tag => (
-                        <span class="tag">{tag}</span>
+    {repos.sort((a, b) => a.data.name.localeCompare(b.data.name)).map(repo => (
+        <article class="project">
+            <h3>{repo.data.name}</h3>
+            <div class="description" set:html={marked(repo.data.description)}></div>
+            {repo.data.highlights && repo.data.highlights.length > 0 && (
+                <ul class="highlights">
+                    {repo.data.highlights.map(highlight => (
+                        <li>{highlight}</li>
                     ))}
-                </div>
-                <div class="links">
-                    <LinkBtn link={{url: repo.data.url, text: "Code"}} classes={["btn", "btn-primary"]} />
-                    {repo.data.links.map(link => (
-                        <LinkBtn link={link} classes={["btn", "btn-secondary"]} />
-                    ))}
-                </div>
-            </li>
-        ))}
-    </ul>
+                </ul>
+            )}
+            <div class="tags">
+                {repo.data.tags.map(tag => (
+                    <RepoTag tag={tag} repoType={repo.data.type}/>
+                ))}
+            </div>
+            <div class="links">
+                <LinkBtn link={{url: repo.data.url, text: "Code"}} classes={["btn", "btn-primary"]} />
+                {repo.data.links.map(link => (
+                    <LinkBtn link={link} classes={["btn", "btn-secondary"]} />
+                ))}
+            </div>
+        </article>
+    ))}
 </section>
 <style>
 .projects {
     background-color: #f9f9f9;
 }
-.projects > ul {
+.projects {
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -63,11 +62,6 @@ const repos = await getCollection('repos');
 .tags {
     display: flex;
     gap: 0.5rem;
-}
-.tag {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 0.25rem 0.5rem;
 }
 .links {
     display: flex;

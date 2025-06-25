@@ -1,0 +1,30 @@
+---
+import LinkBtn from "./LinkBtn.astro";
+import { repoUsers } from "../constants";
+
+const { tag, repoType } = Astro.props;
+
+const hrefCalculator = (tag: string, repoType: string) => {
+    switch (repoType) {
+        case 'github':
+            let users = repoUsers.map(user => `owner:${user}`);
+            return `https://github.com/search?q=(${users.join(' OR ')}) ${tag}`;
+        default:
+            return null;
+    }
+}
+
+const url = hrefCalculator(tag, repoType);
+const link = url && {
+    url,
+    text: tag
+};
+---
+<span class="tag">{link && <LinkBtn link={link} /> || tag}</span>
+<style>
+.tag {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+}
+</style>

@@ -42,7 +42,6 @@ const fetchReadmeDescriptionOr = async (repo: RepoReference, defaultDescription:
     return description || defaultDescription;
 }
 
-
 export const fetchRepository = async (repo: RepoReference): Promise<RepoData | null> => {
     console.info(` - Fetching repository data for ${repo.usr}/${repo.repoName}`);
     const { usr, repoName } = repo;
@@ -67,6 +66,7 @@ export const fetchRepository = async (repo: RepoReference): Promise<RepoData | n
     const tags = data.topics ?? [];
     const links = repo.links ?? [];
     return {
+        type: repo.type,
         name: data.name,
         description,
         highlights,

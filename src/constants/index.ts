@@ -9,7 +9,7 @@ export const REPO_LINK: Link = {
 };
 
 // External data:
-export const repos: RepoReference[] = [
+export const highlights: RepoReference[] = [
   {
     type: 'github',
     usr: 'jkutkut', repoName: 'osmia',
@@ -43,3 +43,11 @@ export const repos: RepoReference[] = [
     usr: 'jkutkutOrg', repoName: 'EatUp',
   }
 ];
+
+export const repos: RepoReference[] = [
+    highlights
+].flat(); // TODO remove duplicates
+
+export const repoUsers: string[] = repos.flat()
+    .map(repo => repo.usr)
+    .filter((value, index, self) => self.indexOf(value) === index);
