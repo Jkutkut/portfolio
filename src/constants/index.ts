@@ -1,5 +1,6 @@
 import { version } from '../../package.json';
 import type { Link, RepoReference } from "../types";
+import categories from './categories';
 
 export const TITLE: string = 'Jkutkut';
 
@@ -45,7 +46,8 @@ export const highlights: RepoReference[] = [
 ];
 
 export const repos: RepoReference[] = [
-    highlights
+    highlights,
+    categories.map(category => category.repos).flat()
 ].flat(); // TODO remove duplicates
 
 export const repoUsers: string[] = repos.flat()
