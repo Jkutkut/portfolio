@@ -1,19 +1,19 @@
 ---
 import { TITLE } from "../constants";
-import type { Link } from "../types";
+import { LinkTarget, type Link } from "../types";
 import LinkBtn from "./LinkBtn.astro";
 
 const routes: Link[] = Astro.props.routes || [];
 ---
 <header>
     <div class="logo">
-        <LinkBtn link={{ text: TITLE, url: '/' }} />
+        <LinkBtn link={{ text: TITLE, url: '/' }} target={LinkTarget.Self} />
     </div>
     <nav>
         <ul>
             {routes.map((route) => (
                 <li>
-                    <LinkBtn link={route} />
+                    <LinkBtn link={route} target={LinkTarget.Self} />
                 </li>
             ))}
         </ul>
