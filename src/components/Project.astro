@@ -1,0 +1,65 @@
+---
+import { marked } from "marked";
+import type { RepoData } from "../types";
+import LinkBtn from "./LinkBtn.astro";
+import RepoTag from "./RepoTag.astro";
+
+type Props = {
+  repo: RepoData;
+};
+const { repo }: Props = Astro.props;
+---
+
+<article class="project">
+  <h3>{repo.name}</h3>
+  <div class="description" set:html={marked(repo.description)} />
+  {
+    repo.highlights && repo.highlights.length > 0 && (
+      <ul class="highlights">
+        {repo.highlights.map((highlight) => (
+          <li>{highlight}</li>
+        ))}
+      </ul>
+    )
+  }
+  <div class="tags">
+    {repo.tags.map((tag) => <RepoTag tag={tag} repoType={repo.type} />)}
+  </div>
+  <div class="links">
+    <LinkBtn
+      link={{ url: repo.url, text: "Code" }}
+      classes={["btn", "btn-primary"]}
+    />
+    {
+      repo.links.map((link) => (
+        <LinkBtn link={link} classes={["btn", "btn-secondary"]} />
+      ))
+    }
+  </div>
+</article>
+<style>
+  .project {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    background-color: #505050;
+    gap: 1rem;
+    padding: 1rem;
+
+    color: #fff;
+  }
+  .project h3 {
+    margin: 0;
+  }
+  .project p {
+    margin: 0.5rem 0;
+  }
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .links {
+    display: flex;
+    gap: 0.5rem;
+  }
+</style>

@@ -28,6 +28,7 @@ export interface RepoReference {
 }
 
 export type RepoData = { // TODO use astro content type
+  type: 'github';
   name: string;
   full_name: string;
   url: string;
