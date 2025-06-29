@@ -4,77 +4,77 @@ import type { Link, SocialLink } from "../types";
 import LinkBtn from "./LinkBtn.astro";
 
 type LinkHero = Link & {
-    linkType: 'primary' | 'secondary';
+  linkType: "primary" | "secondary";
 };
 interface Props {
-    title: string;
-    description: string;
-    links: LinkHero[];
-    socials: SocialLink[];
+  title: string;
+  description: string;
+  links: LinkHero[];
+  socials: SocialLink[];
 }
 
-const {
-    title,
-    description,
-    links,
-    socials
-}: Props = Astro.props;
+const { title, description, links, socials }: Props = Astro.props;
 ---
+
 <section class="hero">
-    <div class="hero-content">
-        <h1>{title}</h1>
-        <p>{description}</p>
-        <div class="hero-buttons">
-            {links.map((link: LinkHero) => (
-                <LinkBtn link={link} classes={[`btn`, `btn-${link.linkType}`]}/>
-            ))}
-        </div>
-        <div class="socials">
-            {socials.map(social => (
-                <LinkBtn link={social}>
-                    <Image src={social.icon} alt={social.text} width={24} height={24} />
-                </LinkBtn>
-            ))}
-        </div>
+  <div class="hero-content">
+    <h1>{title}</h1>
+    <p>{description}</p>
+    <div class="hero-buttons">
+      {
+        links.map((link: LinkHero) => (
+          <LinkBtn link={link} classes={[`btn`, `btn-${link.linkType}`]} />
+        ))
+      }
     </div>
+    <div class="socials">
+      {
+        socials.map((social) => (
+          <LinkBtn link={social}>
+            <Image src={social.icon} alt={social.text} width={24} height={24} />
+          </LinkBtn>
+        ))
+      }
+    </div>
+  </div>
 </section>
 
 <style>
-.hero {
+  .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-}
-.hero-content {
+    height: calc(100vh - var(--header-height));
+  }
+  .hero-content {
     text-align: center;
-}
-.hero-buttons {
+  }
+  .hero-buttons {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     margin-top: 1.5rem;
-}
-.btn {
+  }
+  .btn {
     padding: 0.75rem 1.5rem;
     border-radius: 0.375rem;
     text-decoration: none;
     font-weight: bold;
-}
-.btn.btn-primary {
+  }
+  .btn.btn-primary {
     color: white;
     background: #007bff;
-}
-.btn.btn-secondary {
+  }
+  .btn.btn-secondary {
     color: white;
     background: #6c757d;
-}
-.socials {
+  }
+  .socials {
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 1rem;
     margin-top: 2rem;
-}
+  }
 </style>

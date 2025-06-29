@@ -5,54 +5,63 @@ import LinkBtn from "./LinkBtn.astro";
 
 const routes: Link[] = Astro.props.routes || [];
 ---
-<header>
-    <div class="logo">
-        <LinkBtn link={{ text: TITLE, url: '/' }} target={LinkTarget.Self} />
-    </div>
-    <nav>
-        <ul>
-            {routes.map((route) => (
-                <li>
-                    <LinkBtn link={route} target={LinkTarget.Self} />
-                </li>
-            ))}
-        </ul>
-    </nav>
+
+<header class="header">
+  <div class="logo">
+    <LinkBtn link={{ text: TITLE, url: "/" }} target={LinkTarget.Self} />
+  </div>
+  <nav>
+    <ul>
+      {
+        routes.map((route) => (
+          <li>
+            <LinkBtn link={route} target={LinkTarget.Self} />
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
 </header>
 
+<div class="header-html-space"></div>
+
 <style>
-header {
+  header {
     position: fixed;
     top: 0;
-    width: 100%;
-
+  }
+  .header {
     display: flex;
     flex-direction: row;
     align-items: center;
 
+    width: 100%;
     border-bottom: 1px solid #000000;
-}
-header > .logo {
+  }
+  .header-html-space, .header {
+    height: var(--header-height);
+  }
+  .header > .logo {
     margin: 1rem;
-}
-.logo {
+  }
+  .logo {
     padding: 1rem;
-}
-nav {
+  }
+  nav {
     width: 100%;
     height: 100%;
     gap: 1rem;
     display: flex;
-}
-nav > ul {
+  }
+  nav > ul {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     padding: 0;
     gap: 1rem;
-}
-li {
+  }
+  li {
     list-style: none;
-}
+  }
 </style>
