@@ -6,20 +6,31 @@ import { str2slug } from "../../utils";
 import Project from "../../components/Project.astro";
 import type { RepoData } from "../../types";
 
+export const highlightSlug = str2slug("highlights");
 
 export const getStaticPaths = (async () => {
+  const staticPaths = [
+    { params: { category: highlightSlug } },
+  ];
   const categories = await getCollection('categories');
   if (!categories) {
-    return [];
+    return staticPaths;
   }
-  return categories.map(category => ({
-    params: { category: str2slug(category.data.title) },
-  }));
+  staticPaths.push(
+    ...categories.map(category => ({
+      params: { category: str2slug(category.data.title) },
+    }))
+  );
+  return staticPaths;
 }) satisfies GetStaticPaths;
 
 const categories = await getCollection('categories');
+const highlights = await getCollection('highlights');
 const { category: categoryName } = Astro.params;
-const category = categories.find(cat => str2slug(cat.data.title) === categoryName.toLowerCase());
+
+const category = categoryName === highlightSlug ?
+  { data: { title: "Highlights", repos: highlights.map(repo => repo.data as RepoData) } } :
+  categories.find(cat => str2slug(cat.data.title) === categoryName.toLowerCase());
 
 if (!category) {
   throw new Error(`Category "${categoryName}" not found.`);
@@ -27,7 +38,6 @@ if (!category) {
 ---
 
 <Layout>
-  <br/><br/><br/><br/>
   <h1>{category.data.title}</h1>
 
   <section class="projects">
