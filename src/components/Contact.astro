@@ -1,0 +1,63 @@
+---
+import { Image } from 'astro:assets';
+import type { SocialLink } from '../types';
+import LinkBtn from './LinkBtn.astro';
+
+interface Props {
+  contacts: SocialLink[];
+}
+
+const { contacts }: Props = Astro.props;
+---
+<section id="contact" class="contact">
+  <h1>Contact Me</h1>
+  <div class="get-in-touch">
+    <h3>Get in touch</h3>
+    {contacts.map((item) => (
+      <div class="contact-item">
+        <Image src={item.icon} alt={item.text} width={24} height={24} />
+        <div class="contact-details">
+          <h4>{item.text}</h4>
+          <LinkBtn link={item}>{item.url}</LinkBtn>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+.contact {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.get-in-touch {
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+
+  background: rgb(184, 184, 184);
+  padding: 2rem;
+  border-radius: 1rem;
+  min-width: 500px;
+  max-width: 600px;
+}
+.get-in-touch h3 {
+  margin: 0;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  margin-top: 2rem;
+}
+.contact-item h4 {
+  margin: 0;
+}
+</style>
