@@ -9,3 +9,8 @@
 :root {
   --header-height: 4rem;
 }
+
+.full-w {
+  display: block;
+  width: 100%;
+}

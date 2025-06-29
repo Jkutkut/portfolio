@@ -18,7 +18,7 @@ export const getStaticPaths = (async () => {
   }
   staticPaths.push(
     ...categories.map(category => ({
-      params: { category: str2slug(category.data.title) },
+      params: { category: str2slug(category.id) },
     }))
   );
   return staticPaths;
@@ -30,7 +30,7 @@ const { category: categoryName } = Astro.params;
 
 const category = categoryName === highlightSlug ?
   { data: { title: "Highlights", repos: highlights.map(repo => repo.data as RepoData) } } :
-  categories.find(cat => str2slug(cat.data.title) === categoryName.toLowerCase());
+  categories.find(cat => str2slug(cat.id) === categoryName.toLowerCase());
 
 if (!category) {
   throw new Error(`Category "${categoryName}" not found.`);

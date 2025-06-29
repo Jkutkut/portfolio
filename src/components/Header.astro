@@ -1,26 +1,47 @@
 ---
+import { getCollection } from "astro:content";
 import { TITLE } from "../constants";
 import { LinkTarget, type Link } from "../types";
 import LinkBtn from "./LinkBtn.astro";
+import { str2slug } from "../utils";
 
 const routes: Link[] = Astro.props.routes || [];
+const categories = await getCollection("categories");
 ---
 
 <header class="header">
-  <div class="logo">
-    <LinkBtn link={{ text: TITLE, url: "/" }} target={LinkTarget.Self} />
+  <div class="menu">
+    <div class="logo">
+      <LinkBtn link={{ text: TITLE, url: "/" }} target={LinkTarget.Self} />
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <LinkBtn link={{ text: "Projects", url: "/repos" }} target={LinkTarget.Self} />
+        </li>
+        {
+          routes.map((route) => (
+            <li>
+              <LinkBtn link={route} target={LinkTarget.Self} />
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
   </div>
-  <nav>
+  <div class="submenu">
     <ul>
-      {
-        routes.map((route) => (
-          <li>
-            <LinkBtn link={route} target={LinkTarget.Self} />
-          </li>
-        ))
-      }
+      {categories.map((category) => (
+        <li>
+          <LinkBtn
+            link={{ text: category.data.title, url: `/repos/${str2slug(category.id)}` }}
+            target={LinkTarget.Self}
+            classes={["full-w"]}
+          />
+        </li>
+      ))}
     </ul>
-  </nav>
+  </div>
 </header>
 
 <div class="header-html-space"></div>
@@ -29,16 +50,18 @@ const routes: Link[] = Astro.props.routes || [];
   header {
     position: fixed;
     top: 0;
+    width: 100%;
+
+    border-bottom: 1px solid #000000;
+    background: white;
+    z-index: 1000;
   }
-  .header {
+  .header > .menu {
     display: flex;
     flex-direction: row;
     align-items: center;
-
-    width: 100%;
-    border-bottom: 1px solid #000000;
   }
-  .header-html-space, .header {
+  .header-html-space, .header > .menu {
     height: var(--header-height);
   }
   .header > .logo {
@@ -64,4 +87,39 @@ const routes: Link[] = Astro.props.routes || [];
   li {
     list-style: none;
   }
+
+  .submenu {
+    display: none;
+    padding: 1rem;
+    padding-top: 0;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 0;
+    }
+  }
+  .submenu.active {
+    display: block;
+  }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector("header")!;
+    const submenu = document.querySelector(".submenu")!;
+
+    const projectsBtn = header.querySelector("nav ul li a[href='/repos']");
+    const onFocus = () => {
+      submenu.classList.add("active");
+    };
+    const onUnfocus = () => {
+      submenu.classList.remove("active");
+    };
+    projectsBtn?.addEventListener("mouseenter", onFocus);
+    header?.addEventListener("mouseleave", onUnfocus);
+    projectsBtn?.addEventListener("focus", onFocus);
+    projectsBtn?.addEventListener("blur", onUnfocus);
+  });
+</script>

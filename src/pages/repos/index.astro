@@ -7,29 +7,32 @@ import { highlightSlug } from "./[category].astro";
 const categories = await getCollection("categories");
 const highlights = await getCollection("highlights");
 
-const highlightCategory = {data: {
-  title: highlightSlug,
-  description: "A collection of my most notable projects and contributions.",
-  repos: highlights
-}}
+const highlightCategory = {
+  id: highlightSlug,
+  data: {
+    title: highlightSlug,
+    description: "A collection of my most notable projects and contributions.",
+    repos: highlights
+  }
+};
 ---
 <Layout>
-  <section id={str2slug(highlightCategory.data.title)} class="category">
+  <section id={str2slug(highlightCategory.id)} class="category">
     <h2>{highlightCategory.data.title}</h2>
     {highlightCategory.data.description && (
       <p class="description">{highlightCategory.data.description!}</p>
     )}
-    <a href={`/repos/${highlightCategory.data.title.toLowerCase()}`} target="_self" referrerpolicy="no-referrer" class="view-all">
+    <a href={`/repos/${str2slug(highlightCategory.id)}`} target="_self" referrerpolicy="no-referrer" class="view-all">
       View all {highlightCategory.data.title} {highlightCategory.data.repos.length} repositories
     </a>
   </section>
   {categories.map(category => (
-    <section id={category.data.title.toLowerCase()} class="category">
+    <section id={str2slug(category.id)} class="category">
       <h2>{category.data.title}</h2>
       {category.data.description && (
         <p class="description">{category.data.description!}</p>
       )}
-      <a href={`/repos/${category.data.title.toLowerCase()}`} target="_self" referrerpolicy="no-referrer" class="view-all">
+      <a href={`/repos/${str2slug(category.id)}`} target="_self" referrerpolicy="no-referrer" class="view-all">
         View all {category.data.title} {category.data.repos.length} repositories
       </a>
     </section>
