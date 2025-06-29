@@ -1,9 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
+import MdSection from "../components/MdSection.astro";
 import Projects from "../components/Projects.astro";
-import { SOCIAL_LINKS } from "../constants/socials";
 import Contact from "../components/Contact.astro";
+
+import { SOCIAL_LINKS } from "../constants/socials";
+import * as aboutMe from '../constants/aboutMe.md';
 ---
 
 <Layout>
@@ -16,6 +19,7 @@ import Contact from "../components/Contact.astro";
     ]}
     socials={SOCIAL_LINKS}
   />
+  <MdSection id="about-me" content={aboutMe} />
   <Projects />
   <Contact contacts={SOCIAL_LINKS}/>
 </Layout>

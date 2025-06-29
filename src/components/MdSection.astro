@@ -1,0 +1,8 @@
+---
+import { marked } from 'marked';
+
+const { id, content } = Astro.props;
+---
+
+<section id={id} set:html={marked(content.rawContent())}>
+</section>
