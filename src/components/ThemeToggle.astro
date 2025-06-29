@@ -1,0 +1,69 @@
+---
+import sun from '../assets/sun.svg'
+import moon from '../assets/moon.svg'
+import { Image } from 'astro:assets'
+---
+
+<a id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+  <Image src={sun} alt="Light Theme" width={24} height={24} class="light-icon" />
+  <Image src={moon} alt="Dark Theme" width={24} height={24} class="dark-icon" />
+</a>
+
+<style>
+  .theme-toggle {
+    margin-right: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 1.5rem;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 0.35rem;
+    --width-padding: 2.5rem;
+    --base-padding: 0.35rem;
+
+    transition: 250ms ease-in-out;
+
+    /* Disable selection */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  body:not(.light) .theme-toggle {
+    padding-right: var(--width-padding);
+    padding-left: var(--base-padding);
+  }
+  body.light .theme-toggle {
+    padding-right: var(--base-padding);
+    padding-left: var(--width-padding);
+  }
+
+  body.light .theme-toggle .dark-icon,
+  body:not(.light) .theme-toggle .light-icon {
+    display: none;
+  }
+</style>
+
+<script>
+  {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+      document.body.classList.add("light");
+    }
+  }
+  document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.getElementById("theme-toggle");
+    themeToggle?.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+      if (document.body.classList.contains("light")) {
+        localStorage.setItem("theme", "light");
+      } else {
+        localStorage.removeItem("theme");
+      }
+    });
+  });
+</script>

@@ -4,6 +4,7 @@ import { TITLE } from "../constants";
 import { LinkTarget, type Link } from "../types";
 import LinkBtn from "./LinkBtn.astro";
 import { str2slug } from "../utils";
+import ThemeToggle from "./ThemeToggle.astro";
 
 const routes: Link[] = Astro.props.routes || [];
 const categories = await getCollection("categories");
@@ -28,6 +29,7 @@ const categories = await getCollection("categories");
         }
       </ul>
     </nav>
+    <ThemeToggle />
   </div>
   <div class="submenu">
     <ul>
