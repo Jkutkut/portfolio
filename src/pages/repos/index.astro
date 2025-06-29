@@ -1,0 +1,19 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const categories = await getCollection("categories");
+---
+<Layout>
+  {categories.map(category => (
+    <section id={category.data.title.toLowerCase()} class="category">
+      <h2>{category.data.title}</h2>
+      {category.data.description && (
+        <p class="description">{category.data.description!}</p>
+      )}
+      <a href={`/repos/${category.data.title.toLowerCase()}`} target="_self" referrerpolicy="no-referrer" class="view-all">
+        View all {category.data.title} {category.data.repos.length} repositories
+      </a>
+    </section>
+  ))}
+</Layout>

@@ -2,6 +2,7 @@ import type { RepoReference } from "../types";
 
 const categories: {
     title: string,
+    description?: string,
     repos: RepoReference[],
 }[] = [
   {
@@ -19,6 +20,7 @@ const categories: {
   },
   {
     title: "cursus42",
+    description: "Some highlights of my journey through the 42 Madrid cursus.",
     repos: [
       {
         type: "github",
@@ -28,6 +30,7 @@ const categories: {
   },
   {
     title: "tools",
+    description: "Tools and utilities to help with various tasks.",
     repos: [
       {
         type: "github",
@@ -104,16 +107,22 @@ const categories: {
     ],
   },
   {
-    title: "arduino",
+    title: "IoT",
+    description: "Various projects involving IoT. Includes Arduino, ESP32 and Raspberry Pi.",
     repos: [
       {
         type: "github",
         usr: "Jkutkut", repoName: "Arduino-SwitchItON",
       },
+      {
+        type: 'github',
+        usr: "ReGonzalezTeam", repoName: "InfoReflect"
+      }
     ],
   },
   {
     title: "designs3d",
+    description: "3D designs? Yes, I have some!",
     repos: [
       {
         type: "github",
@@ -131,6 +140,7 @@ const categories: {
   },
   {
     title: "visualize",
+    description: "Different visualization projects to help understand algorithms and concepts.",
     repos: [
       {
         type: "github",
@@ -168,10 +178,15 @@ const categories: {
         type: "github",
         usr: "Jkutkut", repoName: "JS-Dijkstra-Minimum-Spanning-Tree",
       },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "C-N_Queens_Puzzle",
+      },
     ],
   },
   {
     title: "games",
+    description: "Some games I made over the years.",
     repos: [
       {
         type: "github",
@@ -219,10 +234,6 @@ const categories: {
       },
       {
         type: "github",
-        usr: "Jkutkut", repoName: "C-N_Queens_Puzzle",
-      },
-      {
-        type: "github",
         usr: "Jkutkut", repoName: "JS-Wii_Play_Tanks",
       },
       {
@@ -241,6 +252,7 @@ const categories: {
   },
   {
     title: "docker4all",
+    description: "Docker images ready to be used in various situations.",
     repos: [
       {
         type: "github",

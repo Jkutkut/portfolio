@@ -1,19 +1,35 @@
 ---
 import { getCollection } from "astro:content";
-import { marked } from "marked";
 import LinkBtn from "./LinkBtn.astro";
-import RepoTag from "./RepoTag.astro";
 import Project from "./Project.astro";
-import type { RepoData } from "../types";
+import { LinkTarget, type RepoData } from "../types";
 
 const repos = await getCollection("highlights");
 ---
 
 <section id="projects" class="projects">
   <h2>Projects</h2>
-  {
-    repos
-      .sort((a, b) => a.data.name.localeCompare(b.data.name))
-      .map((repo) => <Project repo={repo.data as RepoData} />)
-  }
+  <div class="projects-list">
+    {
+      repos
+        .sort((a, b) => a.data.name.localeCompare(b.data.name))
+        .map((repo) => <Project repo={repo.data as RepoData} />)
+    }
+  </div>
+  <div class="view-all">
+    <LinkBtn
+      link={{
+        url: "/repos",
+        text: "View all repositories",
+      }}
+      target={LinkTarget.Self}
+    />
+  </div>
 </section>
+
+<style>
+.projects-list {
+  display: grid;
+  gap: 1rem;
+}
+</style>

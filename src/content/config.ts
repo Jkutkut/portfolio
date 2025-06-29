@@ -45,8 +45,8 @@ const categoriesCollection = defineCollection({
     const data = await Promise.all(categories.map(async category => {
       const repos = await Promise.all(category.repos.map(loadFromRepoReference));
       return {
+        ...category,
         id: category.title,
-        title: category.title,
         repos: repos.filter(Boolean)
       };
     }));
@@ -54,6 +54,7 @@ const categoriesCollection = defineCollection({
   },
   schema: z.object({
     title: z.string(),
+    description: z.string().optional(),
     repos: z.array(repoSchema)
   })
 })
