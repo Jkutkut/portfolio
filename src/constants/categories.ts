@@ -16,7 +16,33 @@ const categories: {
         type: "github",
         usr: "jkutkutOrg", repoName: "Android-CineHub",
       },
+      {
+        type: 'github',
+        usr: 'jkutkutOrg', repoName: 'EatUp',
+      }
     ],
+  },
+  {
+    title: "osmia",
+    description: "",
+    repos: [
+      {
+        type: 'github',
+        usr: 'jkutkut', repoName: 'osmia',
+      },
+      {
+        type: 'github',
+        usr: 'jkutkut', repoName: 'osmia-cli',
+      },
+      {
+        type: 'github',
+        usr: 'jkutkut', repoName: 'osmia-npm',
+      },
+      {
+        type: 'github',
+        usr: 'jkutkut', repoName: 'osmia-vscode',
+      }
+    ]
   },
   {
     title: "cursus42",

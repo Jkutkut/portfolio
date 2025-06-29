@@ -3,6 +3,8 @@ import { TITLE } from "../constants";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SOCIAL_LINKS } from "../constants/socials";
+
+import "../styles/global.css";
 ---
 
 <!doctype html>
@@ -18,7 +20,7 @@ import { SOCIAL_LINKS } from "../constants/socials";
     <Header
       routes={[
         { url: "/", text: "Home" },
-        { url: "/#projects", text: "Projects" },
+        { url: "/repos", text: "Projects" },
         { url: "/#contact", text: "Contact" },
       ]}
     />

@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import type { Link, SocialLink } from "../types";
+import { LinkTarget, type Link, type SocialLink } from "../types";
 import LinkBtn from "./LinkBtn.astro";
 
 type LinkHero = Link & {
@@ -23,7 +23,10 @@ const { title, description, links, socials }: Props = Astro.props;
     <div class="hero-buttons">
       {
         links.map((link: LinkHero) => (
-          <LinkBtn link={link} classes={[`btn`, `btn-${link.linkType}`]} />
+          <LinkBtn link={link}
+            classes={[`btn`, `btn-${link.linkType}`]}
+            target={LinkTarget.Self}
+          />
         ))
       }
     </div>
