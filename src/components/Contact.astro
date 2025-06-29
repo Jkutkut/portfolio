@@ -15,7 +15,7 @@ const { contacts }: Props = Astro.props;
     <h3>Get in touch</h3>
     {contacts.map((item) => (
       <div class="contact-item">
-        <Image src={item.icon} alt={item.text} width={24} height={24} />
+        <Image src={item.icon} alt={item.text} width={24} height={24} class="default" />
         <div class="contact-details">
           <h4>{item.text}</h4>
           <LinkBtn link={item}>{item.url}</LinkBtn>
@@ -42,8 +42,8 @@ const { contacts }: Props = Astro.props;
   justify-content:flex-start;
 
   background: var(--accent);
-  padding: 2rem;
-  border-radius: 1rem;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
   min-width: 500px;
   max-width: 600px;
 }

@@ -21,16 +21,58 @@ body {
   --border: #444444;
   --accent: #888888;
 
+  --txt-color-btn: #e0e0e0;
+  --txt-bg-p: #2c2c2c;
+  --txt-bg-s: #1e1e1e;
+
   background-color: var(--bg);
   color: var(--txt-color-s);
   font-size: 16px;
+}
+
+body.light {
+  --bg: #e0e0e0;
+  --txt-color-p: #121212;
+  --txt-color-s: #444444;
+  --border: #888888;
+  --accent: #b0b0b0;
+
+  --txt-color-btn: #e0e0e0;
+  --txt-bg-p: #007bff;
+  --txt-bg-s: #6c757d;
+}
+
+body.light .description a {
+  font-weight: 500;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--txt-color-p);
 }
 
+a {
+  color: var(--txt-color-p);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  color: white;
+}
+.btn.btn-primary {
+  background: var(--txt-bg-p);
+}
+.btn.btn-secondary {
+  background: var(--txt-bg-s);
+}
+
 .full-w {
   display: block;
   width: 100%;
+}
+
+body:not(.light) img:not(.default) {
+  filter: invert(1);
 }
