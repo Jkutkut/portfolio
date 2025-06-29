@@ -1,100 +1,104 @@
 ---
-import { Image } from 'astro:assets';
-import LinkBtn from './LinkBtn.astro';
-import type { SocialLink, LinkSection } from '../types';
-import { REPO_LINK } from '../constants';
+import { Image } from "astro:assets";
+import LinkBtn from "./LinkBtn.astro";
+import type { SocialLink, LinkSection } from "../types";
+import { REPO_LINK } from "../constants";
 
 type Props = {
-    sections: LinkSection[];
-    socials: SocialLink[];
-}
+  sections: LinkSection[];
+  socials: SocialLink[];
+};
 
-const {
-    sections,
-    socials
-}: Props = Astro.props;
+const { sections, socials }: Props = Astro.props;
 ---
+
 <footer>
-    {sections.length > 0 && <div class="links">
-        {sections.map(section => (
-            <div class="section">
-                <h3>{section.name}</h3>
-                <ul>
-                    {section.links.map(link => (
-                        <li>
-                            <LinkBtn link={link}></LinkBtn>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+  {
+    sections.length > 0 && (
+      <div class="links">
+        {sections.map((section) => (
+          <div class="section">
+            <h3>{section.name}</h3>
+            <ul>
+              {section.links.map((link) => (
+                <li>
+                  <LinkBtn link={link} />
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
-    </div>}
-    <div class="contact">
-        {socials.map(social => (
-            <LinkBtn link={social}>
-                {social.text}
-                <Image src={social.icon} alt={social.text} width={24} height={24} />
-            </LinkBtn>
-        ))}
+      </div>
+    )
+  }
+  <div class="contact">
+    {
+      socials.map((social) => (
+        <LinkBtn link={social}>
+          {social.text}
+          <Image src={social.icon} alt={social.text} width={24} height={24} />
+        </LinkBtn>
+      ))
+    }
+  </div>
+  <div class="footer-info">
+    <div class="portfolio-info">
+      <p>
+        Portfolio
+        <LinkBtn link={REPO_LINK} />
+      </p>
     </div>
-    <div class="footer-info">
-        <div class="portfolio-info">
-            <p>
-                Portfolio
-                <LinkBtn link={REPO_LINK}/>
-            </p>
-        </div>
-    </div>
+  </div>
 </footer>
 
 <style>
-footer {
-    background: #c9c9c9;
+  footer {
+    border-top: 2px solid var(--border);
     padding: 1rem;
     margin: 0;
-}
-footer > div {
+  }
+  footer > div {
     padding-top: 1rem;
-}
-footer > div:first-child {
+  }
+  footer > div:first-child {
     padding-top: 0;
-}
-.links {
+  }
+  .links {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     gap: 2rem;
-}
-ul {
+  }
+  ul {
     padding-left: 0;
     list-style: none;
-}
+  }
 
-.contact {
+  .contact {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 1rem;
 
     a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        img {
-            margin-left: 0.5rem;
-        }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        margin-left: 0.5rem;
+      }
     }
-}
-.footer-info {
+  }
+  .footer-info {
     padding: 0;
-}
-.portfolio-info {
-    border-top: 1px solid #000;
+  }
+  .portfolio-info {
+    border-top: 1px solid var(--border);
     text-align: start;
     padding-top: 1rem;
 
     p {
-        margin: 0;
+      margin: 0;
     }
-}
+  }
 </style>

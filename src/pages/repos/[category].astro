@@ -38,9 +38,8 @@ if (!category) {
 ---
 
 <Layout>
-  <h1>{category.data.title}</h1>
-
   <section class="projects">
+    <h1>{category.data.title}</h1>
     {category.data.repos.map(repo => (
       <Project repo={repo as RepoData} />
     )) || <p>No repositories found in this category.</p>}

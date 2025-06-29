@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { str2slug } from "../../utils";
 import { highlightSlug } from "./[category].astro";
+import LinkBtn from "../../components/LinkBtn.astro";
 
 const categories = await getCollection("categories");
 const highlights = await getCollection("highlights");
@@ -22,9 +23,10 @@ const highlightCategory = {
     {highlightCategory.data.description && (
       <p class="description">{highlightCategory.data.description!}</p>
     )}
-    <a href={`/repos/${str2slug(highlightCategory.id)}`} target="_self" referrerpolicy="no-referrer" class="view-all">
-      View all {highlightCategory.data.title} {highlightCategory.data.repos.length} repositories
-    </a>
+    <LinkBtn link={{
+      url: `/repos/${str2slug(highlightCategory.id)}`,
+      text: `View all ${highlightCategory.data.repos.length} repositories`,
+    }} />
   </section>
   {categories.map(category => (
     <section id={str2slug(category.id)} class="category">
@@ -32,9 +34,10 @@ const highlightCategory = {
       {category.data.description && (
         <p class="description">{category.data.description!}</p>
       )}
-      <a href={`/repos/${str2slug(category.id)}`} target="_self" referrerpolicy="no-referrer" class="view-all">
-        View all {category.data.title} {category.data.repos.length} repositories
-      </a>
+      <LinkBtn link={{
+        url: `/repos/${str2slug(category.id)}`,
+        text: `View all ${category.data.repos.length} repositories`,
+      }} />
     </section>
   ))}
 </Layout>

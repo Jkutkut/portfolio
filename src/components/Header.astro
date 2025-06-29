@@ -52,8 +52,8 @@ const categories = await getCollection("categories");
     top: 0;
     width: 100%;
 
-    border-bottom: 1px solid #000000;
-    background: white;
+    border-bottom: 2px solid var(--border);
+    background: var(--bg);
     z-index: 1000;
   }
   .header > .menu {
@@ -92,6 +92,7 @@ const categories = await getCollection("categories");
     display: none;
     padding: 1rem;
     padding-top: 0;
+    border-top: 2px solid var(--border);
 
     ul {
       display: flex;

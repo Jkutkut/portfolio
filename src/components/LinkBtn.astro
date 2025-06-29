@@ -2,54 +2,52 @@
 import { LinkTarget, type Link } from "../types";
 
 type Props = {
-    link: Link;
-    target?: LinkTarget;
-    rel?: string;
-    classes?: string[];
+  link: Link;
+  target?: LinkTarget;
+  rel?: string;
+  classes?: string[];
 };
 
-const {
-    link,
-    rel = 'noopener noreferrer',
-    classes = [],
-} = Astro.props;
+const { link, rel = "noopener noreferrer", classes = [] } = Astro.props;
 let { target = LinkTarget.Blank } = Astro.props;
 const { text, url: href } = link;
 const slotHasContent = !!Astro.slots.default;
 
-if (href && href.startsWith('#')) {
-    target = LinkTarget.Self;
+if (href && href.startsWith("#")) {
+  target = LinkTarget.Self;
 }
 ---
+
 <a
-    href={href} target={target}
-    rel={rel}
-    class={classes.length > 0 ? classes.join(' ') : undefined}
-    title={text}
+  href={href}
+  target={target}
+  rel={rel}
+  class={classes.length > 0 ? classes.join(" ") : undefined}
+  title={text}
 >
-    {slotHasContent ? <slot /> : text}
+  {slotHasContent ? <slot /> : text}
 </a>
 <style>
-a {
-    color: #000;
+  a {
+    color: var(--txt-color-p);
     text-decoration: none;
-}
-a:hover {
+  }
+  a:hover {
     text-decoration: underline;
-}
+  }
 
-.btn {
+  .btn {
     padding: 0.75rem 1.5rem;
     border-radius: 0.375rem;
     text-decoration: none;
     font-weight: bold;
-}
-.btn.btn-primary {
+  }
+  .btn.btn-primary {
     color: white;
     background: #007bff;
-}
-.btn.btn-secondary {
+  }
+  .btn.btn-secondary {
     color: white;
     background: #6c757d;
-}
+  }
 </style>
