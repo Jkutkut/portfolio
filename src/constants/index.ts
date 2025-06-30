@@ -1,5 +1,6 @@
 import { version } from '../../package.json';
 import type { Link, RepoReference } from "../types";
+import { repoMerger } from '../utils';
 import categories from './categories';
 
 export const TITLE: string = 'Jkutkut';
@@ -45,10 +46,10 @@ export const highlights: RepoReference[] = [
   }
 ];
 
-export const repos: RepoReference[] = [
+export const repos: RepoReference[] = repoMerger([
     highlights,
     categories.map(category => category.repos).flat()
-].flat(); // TODO remove duplicates
+]);
 
 export const repoUsers: string[] = repos.flat()
     .map(repo => repo.usr)
