@@ -36,7 +36,7 @@ const { sections, socials }: Props = Astro.props;
       socials.map((social) => (
         <LinkBtn link={social}>
           {social.text}
-          <Image src={social.icon} alt={social.text} width={24} height={24} />
+          <Image src={social.icon} alt={`icon for ${social.text}`} width={24} height={24} />
         </LinkBtn>
       ))
     }

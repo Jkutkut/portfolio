@@ -10,12 +10,12 @@ interface Props {
 const { contacts }: Props = Astro.props;
 ---
 <section id="contact" class="contact">
-  <h1>Contact Me</h1>
+  <h2>Contact me</h1>
   <div class="get-in-touch">
     <h3>Get in touch</h3>
     {contacts.map((item) => (
       <div class="contact-item">
-        <Image src={item.icon} alt={item.text} width={24} height={24} class="default" />
+        <Image src={item.icon} alt={`icon for ${item.text}`} width={24} height={24} class="default" />
         <div class="contact-details">
           <h4>{item.text}</h4>
           <LinkBtn link={item}>{item.url}</LinkBtn>

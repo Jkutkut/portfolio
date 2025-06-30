@@ -5,11 +5,6 @@
   font-display: swap;
   src: url("/public/inter-font/InterVariable.woff2") format("woff2");
 }
-:root {
-  font-family: Inter, sans-serif;
-  font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
-  line-height: 1.5;
-}
 @supports (font-variation-settings: normal) {
   :root {
     font-family: InterVariable, sans-serif;
@@ -17,6 +12,10 @@
 }
 
 :root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
+  line-height: 1.5;
+
   --header-height: 4rem;
   --contact-max-width: 600px;
 }
@@ -36,7 +35,7 @@ body {
   --txt-color-p: #e0e0e0;
   --txt-color-s: #b0b0b0;
   --border: #444444;
-  --accent: #888888;
+  --accent: #444444;
 
   --txt-color-btn: #e0e0e0;
   --txt-bg-p: #2c2c2c;
@@ -61,6 +60,9 @@ body.light {
 
 body.light .description a {
   font-weight: 500;
+}
+.description a, .portfolio-info a {
+  text-decoration: underline;
 }
 
 section {
