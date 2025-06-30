@@ -1,5 +1,4 @@
 export interface Link {
-  type?: 'docs';
   url: string;
   text: string;
 }
