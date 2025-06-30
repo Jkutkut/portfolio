@@ -27,7 +27,7 @@ const highlightCategory = {
     <LinkBtn target={LinkTarget.Self} link={{
       url: `/repos/${str2slug(highlightCategory.id)}`,
       text: `View all ${highlightCategory.data.repos.length} repositories`,
-    }} />
+    }} classes={["descriptive-link"]}/>
   </section>
   {categories.map(category => (
     <section id={str2slug(category.id)} class="category">
@@ -38,7 +38,7 @@ const highlightCategory = {
       <LinkBtn target={LinkTarget.Self} link={{
         url: `/repos/${str2slug(category.id)}`,
         text: `View all ${category.data.repos.length} repositories`,
-      }} />
+      }} classes={["descriptive-link"]}/>
     </section>
   ))}
 </Layout>

@@ -11,7 +11,7 @@ const { repo }: Props = Astro.props;
 ---
 
 <article class="project">
-  <h3>{repo.name}</h3>
+  <h2>{repo.name}</h2>
   <div class="description" set:html={marked(repo.description)} />
   {
     repo.highlights && repo.highlights.length > 0 && (
@@ -48,7 +48,7 @@ const { repo }: Props = Astro.props;
     padding: 1rem;
 
   }
-  .project h3 {
+  .project h2 {
     margin: 0;
   }
   .project p {

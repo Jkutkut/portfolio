@@ -61,7 +61,7 @@ body.light {
 body.light .description a {
   font-weight: 500;
 }
-.description a, .portfolio-info a {
+.description a, .descriptive-link {
   text-decoration: underline;
 }
 
