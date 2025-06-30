@@ -3,7 +3,7 @@ import type { Link, RepoReference } from "../types";
 import categories from './categories';
 
 export const TITLE: string = 'Jkutkut';
-
+export const SEO_DESCRIPTION: string = 'Portfolio of Jorge Re, Jkutkut. A backend developer with passion for software development.';
 export const REPO_LINK: Link = {
     text: `v${version}`,
     url: 'https://jkutkut.com/portfolio'

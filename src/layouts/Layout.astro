@@ -3,6 +3,7 @@ import { TITLE } from "../constants";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SOCIAL_LINKS } from "../constants/socials";
+import { SEO_DESCRIPTION } from "../constants";
 
 import "../styles/global.css";
 ---
@@ -12,6 +13,7 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={SEO_DESCRIPTION} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{TITLE}</title>
