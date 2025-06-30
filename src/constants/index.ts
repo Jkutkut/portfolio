@@ -15,26 +15,6 @@ export const highlights: RepoReference[] = [
   {
     type: 'github',
     usr: 'jkutkut', repoName: 'osmia',
-    highlights: [
-      'Test runner for Node.js',
-      'Supports Mocha, Jest, and Vitest',
-      'Built-in support for TypeScript',
-    ],
-    links: [
-      {
-        type: 'docs',
-        url: 'https://jkutkut.github.io/osmia/osmia/index.html',
-        text: 'Docs',
-      }
-    ]
-  },
-  {
-    type: 'github',
-    usr: 'jkutkut', repoName: 'osmia-cli',
-  },
-  {
-    type: 'github',
-    usr: 'jkutkut', repoName: 'osmia-npm',
   },
   {
     type: 'github',

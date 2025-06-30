@@ -6,6 +6,74 @@ const categories: {
     repos: RepoReference[],
 }[] = [
   {
+    title: "osmia",
+    description: "Templating language designed to be used as an agnostic engine that can be used anywhere.",
+    repos: [
+      {
+        type: 'github',
+        usr: 'jkutkut', repoName: 'osmia',
+        highlights: [
+          'API fully customizable',
+          'JSON context support',
+          'Minimal dependencies',
+        ],
+        links: [
+          {
+            url: 'https://jkutkut.github.io/osmia/osmia/index.html',
+            text: 'Docs',
+          }
+        ]
+      },
+      {
+        type: 'github',
+        usr: 'jkutkut', repoName: 'osmia-vscode',
+        highlights: [
+          'Syntax highlighting',
+          'Built-in snippets',
+          'Context-aware autocompletion',
+          'Fully customizable settings',
+        ],
+        links: [
+          {
+            url: 'https://marketplace.visualstudio.com/items?itemName=jkutkut.osmia',
+            text: 'VSCode Marketplace',
+          }
+        ]
+      },
+      {
+        type: 'github',
+        usr: 'jkutkut', repoName: 'osmia-cli',
+        highlights: [
+          'Zsh autocompletion',
+          'CLI help page built-in',
+        ],
+        links: [
+          {
+            url: 'https://github.com/Jkutkut/osmia-cli/blob/main/README.md',
+            text: 'Docs',
+          }
+        ]
+      },
+      {
+        type: 'github',
+        usr: 'jkutkut', repoName: 'osmia-npm',
+        highlights: [
+          'Rust based, WebAssembly compiled',
+        ],
+        links: [
+          {
+            url: 'https://jkutkut.github.io/osmia-npm/',
+            text: 'Web preview',
+          }
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "docker4osmia",
+      },
+    ]
+  },
+  {
     title: "todo",
     repos: [
       {
@@ -21,28 +89,6 @@ const categories: {
         usr: 'jkutkutOrg', repoName: 'EatUp',
       }
     ],
-  },
-  {
-    title: "osmia",
-    description: "",
-    repos: [
-      {
-        type: 'github',
-        usr: 'jkutkut', repoName: 'osmia',
-      },
-      {
-        type: 'github',
-        usr: 'jkutkut', repoName: 'osmia-cli',
-      },
-      {
-        type: 'github',
-        usr: 'jkutkut', repoName: 'osmia-npm',
-      },
-      {
-        type: 'github',
-        usr: 'jkutkut', repoName: 'osmia-vscode',
-      }
-    ]
   },
   {
     title: "cursus42",
