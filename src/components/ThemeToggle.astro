@@ -2,9 +2,15 @@
 import sun from '../assets/sun.svg'
 import moon from '../assets/moon.svg'
 import { Image } from 'astro:assets'
+
+interface Props {
+  tabIndex?: number;
+}
+
+const { tabIndex }: Props = Astro.props;
 ---
 
-<a id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+<a id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" tabindex={tabIndex}>
   <Image src={sun} alt="Light Theme" width={24} height={24} class="light-icon" />
   <Image src={moon} alt="Dark Theme" width={24} height={24} class="dark-icon" />
 </a>
@@ -57,12 +63,18 @@ import { Image } from 'astro:assets'
   }
   document.addEventListener("DOMContentLoaded", () => {
     const themeToggle = document.getElementById("theme-toggle");
-    themeToggle?.addEventListener("click", () => {
+    const toggleTheme = () => {
       document.body.classList.toggle("light");
       if (document.body.classList.contains("light")) {
         localStorage.setItem("theme", "light");
       } else {
         localStorage.removeItem("theme");
+      }
+    };
+    themeToggle?.addEventListener("click", toggleTheme);
+    themeToggle?.addEventListener("keypress", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        toggleTheme();
       }
     });
   });

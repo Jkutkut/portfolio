@@ -29,7 +29,7 @@ const categories = await getCollection("categories");
         }
       </ul>
     </nav>
-    <ThemeToggle />
+    <ThemeToggle tabIndex={categories.length + routes.length + 3} />
   </div>
   <div class="submenu">
     <ul>
