@@ -38,8 +38,15 @@ const categories = await getCollection("categories");
           <LinkBtn
             link={{ text: category.data.title, url: `/repos/${str2slug(category.id)}` }}
             target={LinkTarget.Self}
-            classes={["full-w"]}
-          />
+            classes={["full-w submenu-link"]}
+          >
+            <span class="title">
+              {category.data.title}
+            </span>
+            {category.data.description && (
+              <span class="link-description">{category.data.description}</span>
+            )}
+          </LinkBtn>
         </li>
       ))}
     </ul>
@@ -89,7 +96,6 @@ const categories = await getCollection("categories");
   li {
     list-style: none;
   }
-
   .submenu {
     display: none;
     padding: 1rem;
