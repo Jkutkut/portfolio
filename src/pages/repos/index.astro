@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import { str2slug } from "../../utils";
 import { highlightSlug } from "./[category].astro";
 import LinkBtn from "../../components/LinkBtn.astro";
+import { LinkTarget } from "../../types";
 
 const categories = await getCollection("categories");
 const highlights = await getCollection("highlights");
@@ -23,7 +24,7 @@ const highlightCategory = {
     {highlightCategory.data.description && (
       <p class="description">{highlightCategory.data.description!}</p>
     )}
-    <LinkBtn link={{
+    <LinkBtn target={LinkTarget.Self} link={{
       url: `/repos/${str2slug(highlightCategory.id)}`,
       text: `View all ${highlightCategory.data.repos.length} repositories`,
     }} />
@@ -34,7 +35,7 @@ const highlightCategory = {
       {category.data.description && (
         <p class="description">{category.data.description!}</p>
       )}
-      <LinkBtn link={{
+      <LinkBtn target={LinkTarget.Self} link={{
         url: `/repos/${str2slug(category.id)}`,
         text: `View all ${category.data.repos.length} repositories`,
       }} />
