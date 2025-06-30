@@ -7,7 +7,7 @@ const categories: {
 }[] = [
   {
     title: "osmia",
-    description: "Templating language designed to be used as an agnostic engine that can be used anywhere.",
+    description: "Custom interpreter language designed to be used as an agnostic templating engine.",
     repos: [
       {
         type: 'github',
