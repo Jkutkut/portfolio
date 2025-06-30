@@ -6,9 +6,10 @@ type Props = {
   target?: LinkTarget;
   rel?: string;
   classes?: string[];
+  tabIndex?: number;
 };
 
-const { link, rel = "noopener noreferrer", classes = [] } = Astro.props;
+const { link, rel = "noopener noreferrer", classes = [], tabIndex } = Astro.props;
 let { target = LinkTarget.Blank } = Astro.props;
 const { text, url: href } = link;
 const slotHasContent = !!Astro.slots.default;
@@ -24,6 +25,7 @@ if (href && href.startsWith("#")) {
   rel={rel}
   class={classes.length > 0 ? classes.join(" ") : undefined}
   title={text}
+  tabindex={tabIndex}
 >
   {slotHasContent ? <slot /> : text}
 </a>

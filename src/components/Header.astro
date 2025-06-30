@@ -13,17 +13,17 @@ const categories = await getCollection("categories");
 <header class="header">
   <div class="menu">
     <div class="logo">
-      <LinkBtn link={{ text: TITLE, url: "/" }} target={LinkTarget.Self} />
+      <LinkBtn link={{ text: TITLE, url: "/" }} target={LinkTarget.Self} tabIndex={1} />
     </div>
     <nav>
       <ul>
         <li>
-          <LinkBtn link={{ text: "Projects", url: "/repos" }} target={LinkTarget.Self} />
+          <LinkBtn link={{ text: "Projects", url: "/repos" }} target={LinkTarget.Self} tabIndex={2} />
         </li>
         {
-          routes.map((route) => (
+          routes.map((route, idx) => (
             <li>
-              <LinkBtn link={route} target={LinkTarget.Self} />
+              <LinkBtn link={route} target={LinkTarget.Self} tabIndex={categories.length + 3 + idx} />
             </li>
           ))
         }
@@ -33,12 +33,13 @@ const categories = await getCollection("categories");
   </div>
   <div class="submenu">
     <ul>
-      {categories.map((category) => (
+      {categories.map((category, idx) => (
         <li>
           <LinkBtn
             link={{ text: category.data.title, url: `/repos/${str2slug(category.id)}` }}
             target={LinkTarget.Self}
             classes={["full-w submenu-link"]}
+            tabIndex={3 + idx}
           >
             <span class="title">
               {category.data.title}
@@ -126,9 +127,17 @@ const categories = await getCollection("categories");
     const onUnfocus = () => {
       submenu.classList.remove("active");
     };
+    const onTabUnfocus = (event: any) => {
+      const relatedTarget = event.relatedTarget;
+      console.log("Tab out from submenu", relatedTarget);
+      if (!submenu.contains(relatedTarget as Node)) {
+        submenu.classList.remove("active");
+      }
+    };
     projectsBtn?.addEventListener("mouseenter", onFocus);
     header?.addEventListener("mouseleave", onUnfocus);
     projectsBtn?.addEventListener("focus", onFocus);
-    projectsBtn?.addEventListener("blur", onUnfocus);
+    submenu.addEventListener("focusout", onTabUnfocus);
+    projectsBtn?.addEventListener("focusout", onTabUnfocus);
   });
 </script>
