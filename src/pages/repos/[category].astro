@@ -29,7 +29,7 @@ const highlights = await getCollection('highlights');
 const { category: categoryName } = Astro.params;
 
 const category = categoryName === highlightSlug ?
-  { data: { title: "Highlights", repos: highlights.map(repo => repo.data as RepoData) } } :
+  { data: { title: "Highlights", description: null, repos: highlights.map(repo => repo.data as RepoData) } } :
   categories.find(cat => str2slug(cat.id) === categoryName.toLowerCase());
 
 if (!category) {
@@ -40,6 +40,9 @@ if (!category) {
 <Layout>
   <section class="projects">
     <h1>{category.data.title}</h1>
+    {category.data.description && (
+      <p class="description">{category.data.description}</p>
+    )}
     {category.data.repos.map(repo => (
       <Project repo={repo as RepoData} />
     )) || <p>No repositories found in this category.</p>}
