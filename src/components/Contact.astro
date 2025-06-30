@@ -44,8 +44,16 @@ const { contacts }: Props = Astro.props;
   background: var(--accent);
   padding: 1.5rem;
   border-radius: 0.5rem;
-  min-width: 500px;
-  max-width: 600px;
+}
+@media (max-width: 600px) {
+  .get-in-touch {
+    width: calc(100% - 3rem);
+  }
+}
+@media (min-width: 600px) {
+  .get-in-touch {
+    min-width: 600px;
+  }
 }
 .get-in-touch h3 {
   margin: 0;
