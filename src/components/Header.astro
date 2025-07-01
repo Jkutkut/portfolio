@@ -69,6 +69,9 @@ const categories = await getCollection("categories");
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    overflow-x: auto;
+    overflow-y: hidden;
   }
   .header-html-space, .header > .menu {
     height: var(--header-height);
