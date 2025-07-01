@@ -13,23 +13,23 @@ const categories = await getCollection("categories");
 <header class="header">
   <div class="menu">
     <div class="logo">
-      <LinkBtn link={{ text: TITLE, url: "/" }} target={LinkTarget.Self} tabIndex={1} />
+      <LinkBtn link={{ text: TITLE, url: "/" }} target={LinkTarget.Self} />
     </div>
     <nav>
       <ul>
         <li>
-          <LinkBtn link={{ text: "Projects", url: "/repos" }} target={LinkTarget.Self} tabIndex={2} />
+          <LinkBtn link={{ text: "Projects", url: "/repos" }} target={LinkTarget.Self} />
         </li>
         {
-          routes.map((route, idx) => (
+          routes.map((route) => (
             <li>
-              <LinkBtn link={route} target={LinkTarget.Self} tabIndex={categories.length + 3 + idx} />
+              <LinkBtn link={route} target={LinkTarget.Self} />
             </li>
           ))
         }
       </ul>
     </nav>
-    <ThemeToggle tabIndex={categories.length + routes.length + 3} />
+    <ThemeToggle tabIndex={0} />
   </div>
   <div class="submenu">
     <ul>
@@ -39,7 +39,6 @@ const categories = await getCollection("categories");
             link={{ text: category.data.title, url: `/repos/${str2slug(category.id)}` }}
             target={LinkTarget.Self}
             classes={["full-w submenu-link"]}
-            tabIndex={3 + idx}
           >
             <span class="title">
               {category.data.title}
@@ -118,9 +117,9 @@ const categories = await getCollection("categories");
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector("header")!;
-    const submenu = document.querySelector(".submenu")!;
+    const submenu = document.querySelector(".submenu") as HTMLElement;
+    const projectsBtn = header.querySelector("nav ul li a[href='/repos']") as HTMLElement;
 
-    const projectsBtn = header.querySelector("nav ul li a[href='/repos']");
     const onFocus = () => {
       submenu.classList.add("active");
     };
@@ -134,10 +133,34 @@ const categories = await getCollection("categories");
         submenu.classList.remove("active");
       }
     };
-    projectsBtn?.addEventListener("mouseenter", onFocus);
+    projectsBtn.addEventListener("mouseenter", onFocus);
     header?.addEventListener("mouseleave", onUnfocus);
-    projectsBtn?.addEventListener("focus", onFocus);
+    projectsBtn.addEventListener("focus", onFocus);
     submenu.addEventListener("focusout", onTabUnfocus);
-    projectsBtn?.addEventListener("focusout", onTabUnfocus);
+    projectsBtn.addEventListener("focusout", onTabUnfocus);
+    document.addEventListener("keydown", (event) => {
+      const focusedElement = document.activeElement;
+      if (event.key !== "Tab" || !focusedElement) {
+        return;
+      }
+      const isShiftPressed = event.shiftKey;
+      const firstSubmenuChild = submenu.querySelector("li:first-child a") as HTMLElement;
+      if (focusedElement === projectsBtn && !isShiftPressed) {
+        event.preventDefault();
+        firstSubmenuChild.focus();
+        return;
+      }
+      if (focusedElement === firstSubmenuChild && isShiftPressed) {
+        event.preventDefault();
+        projectsBtn.focus();
+        return;
+      }
+      const lastSubmenuChild = submenu.querySelector("li:last-child a") as HTMLElement;
+      const submenuNextOption = header.querySelector("li:nth-child(2) a") as HTMLElement;
+      if (focusedElement === lastSubmenuChild && !isShiftPressed) {
+        event.preventDefault();
+        submenuNextOption.focus();
+      }
+    });
   });
 </script>
