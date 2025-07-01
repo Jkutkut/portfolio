@@ -45,14 +45,14 @@ const { contacts }: Props = Astro.props;
   padding: 1.5rem;
   border-radius: 0.5rem;
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .get-in-touch {
-    width: calc(100% - 3rem);
+    width: calc(100% - 4rem);
   }
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .get-in-touch {
-    min-width: 600px;
+    width: 600px;
   }
 }
 .get-in-touch h3 {
@@ -61,6 +61,7 @@ const { contacts }: Props = Astro.props;
 .contact-item {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1rem;
 
   margin-top: 2rem;
