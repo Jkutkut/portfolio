@@ -129,7 +129,16 @@ a.submenu-link:hover {
 }
 
 .btn {
+  padding: 0.75rem 1.5rem;
   color: white;
+  border-radius: 0.375rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+.btn:hover {
+  border: 2px solid var(--border);
+  padding: calc(0.75rem - 2px) calc(1.5rem - 2px);
+  text-decoration: none;
 }
 .btn.btn-primary {
   background: var(--txt-bg-p);
