@@ -23,7 +23,10 @@ const { repo }: Props = Astro.props;
     )
   }
   <div class="tags">
-    {repo.tags.map((tag) => <RepoTag tag={tag} repoType={repo.type} />)}
+    {repo.tags
+      .sort((a, b) => a.localeCompare(b))
+      .map((tag) => <RepoTag tag={tag} repoType={repo.type} />)
+    }
   </div>
   <div class="links">
     <LinkBtn
