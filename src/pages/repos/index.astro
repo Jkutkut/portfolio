@@ -25,6 +25,7 @@ const highlightCategory = {
       Here you can find the available categories of repositories.
     </p>
   </section>
+  <hr />
   <section id={str2slug(highlightCategory.id)} class="category">
     <h2>{highlightCategory.data.title}</h2>
     {highlightCategory.data.description && (
@@ -36,6 +37,7 @@ const highlightCategory = {
     }} classes={["descriptive-link"]}/>
   </section>
   {categories.map(category => (
+    <hr />
     <section id={str2slug(category.id)} class="category">
       <h2>{category.data.title}</h2>
       {category.data.description && (
@@ -51,9 +53,17 @@ const highlightCategory = {
 
 <style>
   section {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 2rem);
+    gap: 1rem;
   }
-  .category {
-    padding: 1rem 0rem 1rem 1rem;
+  h2 {
+    margin: 0;
+  }
+  hr {
+    width: calc(100% - 2rem);
+    margin: 0 auto;
+    border: 1px solid var(--border);
   }
 </style>
