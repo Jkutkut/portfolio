@@ -12,7 +12,6 @@ const repos = await getCollection("highlights");
   <div class="projects-list">
     {
       repos
-        .sort((a, b) => a.data.name.localeCompare(b.data.name))
         .map((repo) => <Project repo={repo.data as RepoData} />)
     }
   </div>
