@@ -74,6 +74,46 @@ const categories: {
     ]
   },
   {
+    title: "IoT",
+    description: "Various projects involving IoT. Includes Arduino, ESP32 and Raspberry Pi.",
+    repos: [
+      {
+        type: 'github',
+        usr: "ReGonzalezTeam", repoName: "InfoReflect",
+        highlights: [
+          "Docker based infrastructure",
+          "Google Auth y Google Calendar integration",
+          "AEMET OpenData API integration",
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "Arduino-SwitchItON",
+        description: "An ESP8266 project to control any electric device",
+      }
+    ],
+  },
+  {
+    title: "3D Design",
+    description: "3D designs? 3D printing? Sure!",
+    repos: [
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "3D-Design-BQ_ZUM",
+      },
+      {
+        type: "github",
+        usr: "JkutkutArchive", repoName: "3D_Design_Sunflower_Keychain",
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "3D_Design-Phone_Stand",
+      },
+    ],
+  },
+
+
+  {
     title: "todo",
     repos: [
       {
@@ -97,6 +137,10 @@ const categories: {
       {
         type: "github",
         usr: "Jkutkut", repoName: "42Madrid-Cursus",
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "PY-API42",
       },
     ],
   },
@@ -175,38 +219,6 @@ const categories: {
       {
         type: "github",
         usr: "Jkutkut", repoName: "PY-AsciiGraph",
-      },
-    ],
-  },
-  {
-    title: "IoT",
-    description: "Various projects involving IoT. Includes Arduino, ESP32 and Raspberry Pi.",
-    repos: [
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "Arduino-SwitchItON",
-      },
-      {
-        type: 'github',
-        usr: "ReGonzalezTeam", repoName: "InfoReflect"
-      }
-    ],
-  },
-  {
-    title: "designs3d",
-    description: "3D designs? Yes, I have some!",
-    repos: [
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "3D-Design-BQ_ZUM",
-      },
-      {
-        type: "github",
-        usr: "JkutkutArchive", repoName: "3D_Design_Sunflower_Keychain",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "3D_Design-Phone_Stand",
       },
     ],
   },

@@ -22,6 +22,10 @@ export const highlights: RepoReference[] = [
   },
   {
     type: 'github',
+    usr: "ReGonzalezTeam", repoName: "InfoReflect"
+  },
+  {
+    type: 'github',
     usr: 'jkutkutOrg', repoName: 'EatUp',
   }
 ];
