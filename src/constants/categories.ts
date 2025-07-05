@@ -111,6 +111,46 @@ const categories: {
       },
     ],
   },
+  {
+    title: "docker4all",
+    description: "Collection of Docker images to help developing and running projects.",
+    repos: [
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "Docker4C",
+        highlights: [
+          "valgrind, clang and libraries like build-essential and readline-common pre-installed",
+          "zsh with Oh-My-Zsh pre-installed with custom configuration",
+          "vim installed and configured to work directly within the container",
+          "Utility tools like curl, git and zip pre-installed",
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "Docker4Rust",
+        highlights: [
+          "Rust compiler installed: rustc and cargo",
+          "cargo watch pre-installed",
+        ]
+      },
+      {
+        type: "github",
+        usr: "jkutkutOrg", repoName: "Docker4Java",
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "docker4osmia",
+        highlights: [
+          "osmia can be used as a cli tool with osmia-cli",
+          "content can be passed with pipes and with files",
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "Docker4Norminette",
+      },
+    ],
+  },
 
 
   {
@@ -228,6 +268,10 @@ const categories: {
     repos: [
       {
         type: "github",
+        usr: "Jkutkut", repoName: "PY-Process_Planner_Visualizer",
+      },
+      {
+        type: "github",
         usr: "JkutkutArchive", repoName: "JS-A_Star-Path-Finding-Matrices",
       },
       {
@@ -331,40 +375,6 @@ const categories: {
       {
         type: "github",
         usr: "Jkutkut", repoName: "JS-The_mind",
-      },
-    ],
-  },
-  {
-    title: "docker4all",
-    description: "Docker images ready to be used in various situations.",
-    repos: [
-      {
-        type: "github",
-        usr: "jkutkutOrg", repoName: "Docker4Java",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "Docker4Rust",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "docker4osmia",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "Docker4Norminette",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "Docker4Any",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "Docker4C",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "Docker4Java",
       },
     ],
   }
