@@ -19,7 +19,6 @@ export const repoMerger = (repos: RepoReference[][]): RepoReference[] => {
         repoMap[key] = repo;
         continue;
       }
-      console.debug(`Duplicate repo found: ${key}`);
       repoInMap.highlights ??= [];
       if (repo.highlights && repo.highlights.length > 0) {
         repo.highlights.forEach(highlight => {
@@ -36,7 +35,6 @@ export const repoMerger = (repos: RepoReference[][]): RepoReference[] => {
           }
         });
       }
-      console.warn(`Repo merged:`, key);
     }
   }
   return Object.values(repoMap);
