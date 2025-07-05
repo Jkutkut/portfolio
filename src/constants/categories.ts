@@ -151,7 +151,78 @@ const categories: {
       },
     ],
   },
-
+  {
+    title: "cursus42",
+    description: "Some highlights of my journey through the 42 Madrid cursus.",
+    repos: [
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "42Madrid-Cursus",
+        highlights: [
+          "Cursus projects",
+          "42 API integration projects",
+          "42 Tester projects",
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "42Madrid-Molewakamole",
+        highlights: [
+          "Analysis tools to extract details not directly available in the 42 API",
+          "Graphic library used to print graphs on the terminal",
+          "cli interface to interact easily with the API",
+          "Simple setup to authorize to the 42 API",
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "MoleWakaMoleWeb",
+        highlights: [
+          "Web interface to interact with the 42 API",
+          "Analysis tools to extract details not directly available in the 42 API",
+          "Simple setup to authorize to the 42 API",
+          "UI emulating cli interface with autocompletion"
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "PY-API42",
+        highlights: [
+          "Wrapper around the 42 API",
+          "Easy to use",
+          "Automatic authentication logic",
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "42Madrid-pipex",
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "42Madrid-push_swap",
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "42Madrid-so_long",
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "42Madrid-Philosophers",
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "custom_header",
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "Sh-Norminette_Tester",
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "42Tester-push_swap",
+      },
+    ],
+  },
 
   {
     title: "todo",
@@ -168,20 +239,6 @@ const categories: {
         type: 'github',
         usr: 'jkutkutOrg', repoName: 'EatUp',
       }
-    ],
-  },
-  {
-    title: "cursus42",
-    description: "Some highlights of my journey through the 42 Madrid cursus.",
-    repos: [
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "42Madrid-Cursus",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "PY-API42",
-      },
     ],
   },
   {
@@ -316,6 +373,10 @@ const categories: {
     title: "games",
     description: "Some games I made over the years.",
     repos: [
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "42Madrid-so_long",
+      },
       {
         type: "github",
         usr: "JkutkutArchive", repoName: "PY-Sudoku_Solver",
