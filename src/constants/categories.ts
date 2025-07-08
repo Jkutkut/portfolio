@@ -439,7 +439,12 @@ const categories: {
     repos: [
       {
         type: "github",
-        usr: "Jkutkut", repoName: "PY-Seven_Segment_Display",
+        usr: "Jkutkut", repoName: "rust-macro-test",
+        highlights: [
+          "Cleaner unit testing in Rust",
+          "Simplified logic and easier to use",
+          "Syntax control to ease the development",
+        ]
       },
       {
         type: "github",
@@ -451,7 +456,7 @@ const categories: {
       },
       {
         type: "github",
-        usr: "Jkutkut", repoName: "Java-Input_Policy",
+        usr: "Jkutkut", repoName: "PY-AsciiGraph",
       },
       {
         type: "github",
@@ -459,16 +464,16 @@ const categories: {
       },
       {
         type: "github",
-        usr: "Jkutkut", repoName: "rust-macro-test",
+        usr: "Jkutkut", repoName: "Java-Input_Policy",
       },
       {
         type: "github",
-        usr: "Jkutkut", repoName: "PY-AsciiGraph",
+        usr: "Jkutkut", repoName: "PY-Seven_Segment_Display",
       },
     ]
   },
   {
-    title: "visualize",
+    title: "Visualization",
     description: "Different visualization projects to help understand algorithms and concepts.",
     repos: [
       {
