@@ -74,85 +74,7 @@ const categories: {
     ]
   },
   {
-    title: "IoT",
-    description: "Various projects involving IoT. Includes Arduino, ESP32 and Raspberry Pi.",
-    repos: [
-      {
-        type: 'github',
-        usr: "ReGonzalezTeam", repoName: "InfoReflect",
-        highlights: [
-          "Docker based infrastructure",
-          "Google Auth y Google Calendar integration",
-          "AEMET OpenData API integration",
-        ]
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "Arduino-SwitchItON",
-        description: "An ESP8266 project to control any electric device",
-      }
-    ],
-  },
-  {
-    title: "3D Design",
-    description: "3D designs? 3D printing? Sure!",
-    repos: [
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "3D-Design-BQ_ZUM",
-      },
-      {
-        type: "github",
-        usr: "JkutkutArchive", repoName: "3D_Design_Sunflower_Keychain",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "3D_Design-Phone_Stand",
-      },
-    ],
-  },
-  {
-    title: "docker4all",
-    description: "Collection of Docker images to help developing and running projects.",
-    repos: [
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "Docker4C",
-        highlights: [
-          "valgrind, clang and libraries like build-essential and readline-common pre-installed",
-          "zsh with Oh-My-Zsh pre-installed with custom configuration",
-          "vim installed and configured to work directly within the container",
-          "Utility tools like curl, git and zip pre-installed",
-        ]
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "Docker4Rust",
-        highlights: [
-          "Rust compiler installed: rustc and cargo",
-          "cargo watch pre-installed",
-        ]
-      },
-      {
-        type: "github",
-        usr: "jkutkutOrg", repoName: "Docker4Java",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "docker4osmia",
-        highlights: [
-          "osmia can be used as a cli tool with osmia-cli",
-          "content can be passed with pipes and with files",
-        ]
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "Docker4Norminette",
-      },
-    ],
-  },
-  {
-    title: "cursus42",
+    title: "42 Cursus",
     description: "Some highlights of my journey through the 42 Madrid cursus.",
     repos: [
       {
@@ -220,6 +142,206 @@ const categories: {
       {
         type: "github",
         usr: "Jkutkut", repoName: "42Tester-push_swap",
+      },
+    ],
+  },
+  {
+    title: "Games",
+    description: "Some games I made over the years.",
+    repos: [
+      {
+        type: "github",
+        usr: "JkutkutArchive", repoName: "JS-Rubik_Cube",
+        highlights: [
+          "Rubik's logic made without libraries",
+          "More cubes: 2x2x2, 3x3x3... nxnxn!",
+          "Simpler controls by using a diagram of the cube side",
+          "Mirror cube variation",
+        ],
+        links: [
+          {
+            url: 'https://jkutkutarchive.github.io/JS-Rubik_Cube/',
+            text: 'Play now',
+          }
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "JS-GameRoom",
+        description: "Website with multiple games made with Js and P5.js.",
+        highlights: [
+          "Agnostic to the games it contains",
+          "Allows any game to be added",
+          "Games loaded as a JSON file",
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "JS-SPACEWAR",
+        highlights: [
+          "Up to 4 players in a local computer",
+          "Custom physics engine",
+          "Fully customizable players and ships",
+          "Kill stats and scoreboard",
+        ],
+        links: [
+          {
+            url: 'https://jkutkut.github.io/JS-SPACEWAR/',
+            text: 'Play now',
+          }
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "42Madrid-so_long",
+      },
+      {
+        type: "github",
+        usr: "JkutkutArchive", repoName: "PY-Sudoku_Solver",
+        highlights: [
+          "Human steps to solve the sudoku if it has a single solution",
+          "PDF with steps made with Python3 + LaTeX",
+        ]
+      },
+      {
+        type: "github",
+        usr: "JkutkutArchive", repoName: "PY-Tetris",
+      },
+      {
+        type: "github",
+        usr: "JkutkutArchive", repoName: "PY-Breakout",
+        highlights: [
+          "Multiple levels",
+          "Multiple UI themes"
+        ]
+      },
+      {
+        type: "github",
+        usr: "JkutkutArchive", repoName: "PY-GameOfLife",
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "JS-Tangle_Game",
+        highlights: [
+          "Automatic solver with animation",
+          "Multiple game modes",
+        ],
+        links: [
+          {
+            url: 'https://jkutkut.github.io/JS-Tangle_Game/',
+            text: 'Play now',
+          }
+        ]
+      },
+      {
+        type: "github",
+        usr: "JkutkutArchive", repoName: "JS_Snake-Game",
+        links: [
+          {
+            url: 'https://jkutkutarchive.github.io/JS_Snake-Game/',
+            text: 'Play now',
+          }
+        ]
+      },
+      {
+        type: "github",
+        usr: "JkutkutArchive", repoName: "JS-Chess",
+        highlights: [
+          "Hover over a piece to see its available moves",
+        ],
+        links: [
+          {
+            url: 'https://jkutkutarchive.github.io/JS-Chess/',
+            text: 'Play now',
+          }
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "JS-Wii_Play_Tanks",
+        description: "My own POC version of the clasic game of tanks from the original \"Wii Play\"",
+        highlights: [
+          "Physics engine",
+          "Basic enemy AI"
+        ]
+      },
+    ],
+  },
+  {
+    title: "docker4all",
+    description: "Collection of Docker images to help developing and running projects.",
+    repos: [
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "Docker4C",
+        highlights: [
+          "valgrind, clang and libraries like build-essential and readline-common pre-installed",
+          "zsh with Oh-My-Zsh pre-installed with custom configuration",
+          "vim installed and configured to work directly within the container",
+          "Utility tools like curl, git and zip pre-installed",
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "Docker4Rust",
+        highlights: [
+          "Rust compiler installed: rustc and cargo",
+          "cargo watch pre-installed",
+        ]
+      },
+      {
+        type: "github",
+        usr: "jkutkutOrg", repoName: "Docker4Java",
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "docker4osmia",
+        highlights: [
+          "osmia can be used as a cli tool with osmia-cli",
+          "content can be passed with pipes and with files",
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "Docker4Norminette",
+      },
+    ],
+  },
+  {
+    title: "IoT",
+    description: "Various projects involving IoT. Includes Arduino, ESP32 and Raspberry Pi.",
+    repos: [
+      {
+        type: 'github',
+        usr: "ReGonzalezTeam", repoName: "InfoReflect",
+        highlights: [
+          "Docker based infrastructure",
+          "Google Auth y Google Calendar integration",
+          "AEMET OpenData API integration",
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "Arduino-SwitchItON",
+        description: "An ESP8266 project to control any electric device",
+      }
+    ],
+  },
+  {
+    title: "3D Design",
+    description: "3D designs? 3D printing? Sure!",
+    repos: [
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "3D-Design-BQ_ZUM",
+      },
+      {
+        type: "github",
+        usr: "JkutkutArchive", repoName: "3D_Design_Sunflower_Keychain",
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "3D_Design-Phone_Stand",
       },
     ],
   },
@@ -369,76 +491,6 @@ const categories: {
       },
     ],
   },
-  {
-    title: "games",
-    description: "Some games I made over the years.",
-    repos: [
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "42Madrid-so_long",
-      },
-      {
-        type: "github",
-        usr: "JkutkutArchive", repoName: "PY-Sudoku_Solver",
-      },
-      {
-        type: "github",
-        usr: "JkutkutArchive", repoName: "PY-Cards_Simulation",
-      },
-      {
-        type: "github",
-        usr: "JkutkutArchive", repoName: "JS-Chess",
-      },
-      {
-        type: "github",
-        usr: "JkutkutArchive", repoName: "PY-Breakout",
-      },
-      {
-        type: "github",
-        usr: "JkutkutArchive", repoName: "PY-Tetris",
-      },
-      {
-        type: "github",
-        usr: "JkutkutArchive", repoName: "JS-Rubik_Cube",
-      },
-      {
-        type: "github",
-        usr: "JkutkutArchive", repoName: "Java-Juego_Ahorcado",
-      },
-      {
-        type: "github",
-        usr: "JkutkutArchive", repoName: "JS_Snake-Game",
-      },
-      {
-        type: "github",
-        usr: "JkutkutArchive", repoName: "PY-GameOfLife",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "JS-Tangle_Game",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "JS-SPACEWAR",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "JS-Wii_Play_Tanks",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "Xun-GuiTos",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "JS-GameRoom",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "JS-The_mind",
-      },
-    ],
-  }
 ];
 
 export default categories;
