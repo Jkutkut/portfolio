@@ -30,7 +30,7 @@ const fetchReadmeAsDescription = async (repo: RepoReference): Promise<string | n
             break;
         }
     }
-    const description = paragraphs.slice(startIdx, endIdx).join(' ').trim();
+    const description = paragraphs.slice(startIdx, endIdx).join('\n').trim();
     console.info(` - Fetched description for ${repo.usr}/${repo.repoName}`);
     return description || null;
 }
