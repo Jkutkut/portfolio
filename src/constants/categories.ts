@@ -345,40 +345,98 @@ const categories: {
       },
     ],
   },
-
   {
-    title: "todo",
-    repos: [
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "osmia-ide",
-      },
-      {
-        type: "github",
-        usr: "jkutkutOrg", repoName: "Android-CineHub",
-      },
-      {
-        type: 'github',
-        usr: 'jkutkutOrg', repoName: 'EatUp',
-      }
-    ],
-  },
-  {
-    title: "tools",
+    title: "Tools",
     description: "Tools and utilities to help with various tasks.",
     repos: [
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "PY-Process_Planner_Visualizer",
+        highlights: [
+          "Colorful console graphs",
+          "Simple configuration",
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "42Madrid-Molewakamole",
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "rust-api_docs_generator",
+        highlights: [
+          "JSON to Markdown converter",
+          "Fast and simple documentation of API endpoints based on JSON",
+          "Agnostic conversion",
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "gamecup",
+        links: [
+          {
+            url: 'https://jkutkut.memoriadeelefante.com/gamecup/',
+            text: 'Live page',
+          }
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "JS-MultiTool",
+        highlights: [
+          "Digital circuit simulator with truth table calculator",
+          "Ascii and binary converters",
+          "Base converter calculator",
+        ],
+        links: [
+          {
+            url: 'https://jkutkut.github.io/JS-MultiTool/',
+            text: 'Live page',
+          }
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "JS-LearningCards",
+        highlights: [
+          "Simple configuration",
+          "Content can be shared as a single JSON file",
+          "Great for learning any new topic",
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "nginx-fileserver",
+        highlights: [
+          "File explorer included",
+          "Trivial configuration",
+          "Docker based and lightweight",
+        ]
+      },
       {
         type: "github",
         usr: "Jkutkut", repoName: "Sh-CloneRepository",
       },
       {
         type: "github",
-        usr: "Jkutkut", repoName: "JS-MultiTool",
+        usr: "Jkutkut", repoName: "rust-notebook",
       },
       {
         type: "github",
-        usr: "Jkutkut", repoName: "JS-LearningCards",
+        usr: "Jkutkut", repoName: "party-planner",
       },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "Eurovision",
+      },
+    ],
+  },
+
+
+  {
+    title: "Libraries",
+    description: "Libraries to abstract and simplify different tasks.",
+    repos: [
       {
         type: "github",
         usr: "Jkutkut", repoName: "PY-Seven_Segment_Display",
@@ -393,23 +451,7 @@ const categories: {
       },
       {
         type: "github",
-        usr: "Jkutkut", repoName: "rust-notebook",
-      },
-      {
-        type: "github",
         usr: "Jkutkut", repoName: "Java-Input_Policy",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "PY-Process_Planner_Visualizer",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "42Madrid-Molewakamole",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "rust-api_docs_generator",
       },
       {
         type: "github",
@@ -417,29 +459,13 @@ const categories: {
       },
       {
         type: "github",
-        usr: "Jkutkut", repoName: "gamecup",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "party-planner",
-      },
-      {
-        type: "github",
         usr: "Jkutkut", repoName: "rust-macro-test",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "nginx-fileserver",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "Eurovision",
       },
       {
         type: "github",
         usr: "Jkutkut", repoName: "PY-AsciiGraph",
       },
-    ],
+    ]
   },
   {
     title: "visualize",
