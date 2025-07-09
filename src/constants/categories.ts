@@ -268,46 +268,6 @@ const categories: {
     ],
   },
   {
-    title: "docker4all",
-    description: "Collection of Docker images to help developing and running projects.",
-    repos: [
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "Docker4C",
-        highlights: [
-          "valgrind, clang and libraries like build-essential and readline-common pre-installed",
-          "zsh with Oh-My-Zsh pre-installed with custom configuration",
-          "vim installed and configured to work directly within the container",
-          "Utility tools like curl, git and zip pre-installed",
-        ]
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "Docker4Rust",
-        highlights: [
-          "Rust compiler installed: rustc and cargo",
-          "cargo watch pre-installed",
-        ]
-      },
-      {
-        type: "github",
-        usr: "jkutkutOrg", repoName: "Docker4Java",
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "docker4osmia",
-        highlights: [
-          "osmia can be used as a cli tool with osmia-cli",
-          "content can be passed with pipes and with files",
-        ]
-      },
-      {
-        type: "github",
-        usr: "Jkutkut", repoName: "Docker4Norminette",
-      },
-    ],
-  },
-  {
     title: "IoT",
     description: "Various projects involving IoT. Includes Arduino, ESP32 and Raspberry Pi.",
     repos: [
@@ -431,8 +391,6 @@ const categories: {
       },
     ],
   },
-
-
   {
     title: "Libraries",
     description: "Libraries to abstract and simplify different tasks.",
@@ -483,30 +441,65 @@ const categories: {
       {
         type: "github",
         usr: "JkutkutArchive", repoName: "JS-A_Star-Path-Finding-Matrices",
+        highlights: [
+          "Random node mesh generator",
+          "Simple controls to change the start and end nodes",
+        ],
+        links: [
+          {
+            url: 'https://jkutkutarchive.github.io/JS-A_Star-Path-Finding-Matrices/',
+            text: 'Live page',
+          }
+        ]
       },
       {
         type: "github",
         usr: "JkutkutArchive", repoName: "JS-A_Star-for-mazes",
+        highlights: [
+          "Maze generator",
+          "Random level generator",
+          "Great controls to handle the visualization",
+        ],
+        links: [
+          {
+            url: 'https://jkutkutarchive.github.io/JS-A_Star-for-mazes/',
+            text: 'Live page',
+          }
+        ]
       },
       {
         type: "github",
-        usr: "JkutkutArchive", repoName: "JS_Barnsley-fern-fractal",
-      },
-      {
-        type: "github",
-        usr: "JkutkutArchive", repoName: "JS_Tree-Fractal",
-      },
-      {
-        type: "github",
-        usr: "JkutkutArchive", repoName: "JS-Lissajous-curves",
+        usr: "Jkutkut", repoName: "JS-Dijkstra-Minimum-Spanning-Tree",
+        links: [
+          {
+            url: 'https://jkutkut.github.io/JS-Dijkstra-Minimum-Spanning-Tree/',
+            text: 'Live page',
+          }
+        ]
       },
       {
         type: "github",
         usr: "JkutkutArchive", repoName: "JS-Drawing-SVGs-using-DFT",
+        links: [
+          {
+            url: 'https://jkutkutarchive.github.io/JS-Drawing-SVGs-using-DFT/',
+            text: 'Live page',
+          }
+        ]
       },
       {
         type: "github",
         usr: "JkutkutArchive", repoName: "JS-Fourier-Series-Visualization",
+        links: [
+          {
+            url: 'https://jkutkutarchive.github.io/JS-Fourier-Series-Visualization/',
+            text: 'Live page',
+          }
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "C-N_Queens_Puzzle",
       },
       {
         type: "github",
@@ -514,11 +507,73 @@ const categories: {
       },
       {
         type: "github",
-        usr: "Jkutkut", repoName: "JS-Dijkstra-Minimum-Spanning-Tree",
+        usr: "JkutkutArchive", repoName: "JS_Barnsley-fern-fractal",
+        links: [
+          {
+            url: 'https://jkutkutarchive.github.io/JS_Barnsley-fern-fractal/',
+            text: 'Live page',
+          }
+        ]
       },
       {
         type: "github",
-        usr: "Jkutkut", repoName: "C-N_Queens_Puzzle",
+        usr: "JkutkutArchive", repoName: "JS_Tree-Fractal",
+        links: [
+          {
+            url: 'https://jkutkutarchive.github.io/JS_Tree-Fractal/',
+            text: 'Live page',
+          }
+        ]
+      },
+      {
+        type: "github",
+        usr: "JkutkutArchive", repoName: "JS-Lissajous-curves",
+        links: [
+          {
+            url: 'https://jkutkutarchive.github.io/JS-Lissajous-curves/',
+            text: 'Live page',
+          }
+        ]
+      },
+    ],
+  },
+  {
+    title: "docker4all",
+    description: "Collection of Docker images to help developing and running projects.",
+    repos: [
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "Docker4C",
+        highlights: [
+          "valgrind, clang and libraries like build-essential and readline-common pre-installed",
+          "zsh with Oh-My-Zsh pre-installed with custom configuration",
+          "vim installed and configured to work directly within the container",
+          "Utility tools like curl, git and zip pre-installed",
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "Docker4Rust",
+        highlights: [
+          "Rust compiler installed: rustc and cargo",
+          "cargo watch pre-installed",
+        ]
+      },
+      {
+        type: "github",
+        usr: "jkutkutOrg", repoName: "Docker4Java",
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "docker4osmia",
+        highlights: [
+          "osmia can be used as a cli tool with osmia-cli",
+          "content can be passed with pipes and with files",
+        ]
+      },
+      {
+        type: "github",
+        usr: "Jkutkut", repoName: "Docker4Norminette",
       },
     ],
   },

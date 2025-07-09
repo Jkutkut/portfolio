@@ -13,7 +13,7 @@ if [ "$1" = "flush-raw" ] || [ "$1" = "flush" ]; then
     fi
 
     while read -r line; do
-        grep "$line" --directories=recurse  "$data2flush" | cut -d: -f1 | xargs rm --interactive=once
+        grep "$line" --directories=recurse  "$data2flush" | cut -d: -f1 | xargs rm
     done
 else
     echo $usage
