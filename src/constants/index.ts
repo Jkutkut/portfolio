@@ -7,7 +7,7 @@ export const TITLE: string = 'Jkutkut';
 export const SEO_DESCRIPTION: string = 'Portfolio of Jorge Re, Jkutkut. A backend developer with passion for software development.';
 export const REPO_LINK: Link = {
     text: `v${version}`,
-    url: 'https://jkutkut.com/portfolio'
+    url: 'https://github.com/jkutkut/portfolio'
 };
 
 // External data:
