@@ -5,6 +5,8 @@ import categories from './categories';
 
 export const TITLE: string = 'Jkutkut';
 export const SEO_DESCRIPTION: string = 'Portfolio of Jorge Re, Jkutkut. A backend developer with passion for software development.';
+export const HERO_TITLE: string = 'Tech Lead & Software Developer';
+export const HERO_DESCRIPTION: string = 'Software developer with passion for codding and solving problems.';
 export const REPO_LINK: Link = {
     text: `v${version}`,
     url: 'https://github.com/jkutkut/portfolio'

@@ -7,12 +7,13 @@ import Contact from "../components/Contact.astro";
 
 import { SOCIAL_LINKS } from "../constants/socials";
 import * as aboutMe from '../constants/aboutMe.md';
+import { HERO_TITLE, HERO_DESCRIPTION } from "../constants";
 ---
 
 <Layout>
   <Hero
-    title="Backend Developer"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    title={HERO_TITLE}
+    description={HERO_DESCRIPTION}
     links={[
       { url: "/#projects", text: "View my work", linkType: "primary" },
       { url: "/#contact", text: "Get in touch", linkType: "secondary" },
