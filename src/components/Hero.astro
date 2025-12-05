@@ -16,7 +16,7 @@ interface Props {
 const { title, description, links, socials }: Props = Astro.props;
 ---
 
-<section class="hero">
+<section class="hero fade-up">
   <div class="hero-content">
     <h1>{title}</h1>
     <p>{description}</p>
@@ -85,4 +85,30 @@ const { title, description, links, socials }: Props = Astro.props;
     gap: 1rem;
     margin-top: 2rem;
   }
+  .fade-up {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const elements = document.querySelectorAll('.fade-up');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); 
+        }
+      });
+    }, { threshold: 0.1 });
+
+    elements.forEach(el => observer.observe(el));
+  });
+</script>

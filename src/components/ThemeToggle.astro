@@ -53,6 +53,42 @@ const { tabIndex }: Props = Astro.props;
   body:not(.light) .theme-toggle .light-icon {
     display: none;
   }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.6s ease, color 0.6s ease;
+  }
+  .theme-toggle {
+    transition:
+      padding 300ms ease,
+      border-color 300ms ease,
+      background-color 300ms ease;
+  }
+  :root {
+    --bg: #121212;
+    --text: #ffffff;
+    --border: #444;
+  }
+
+  body.light {
+    --bg: #ffffff;
+    --text: #000000;
+    --border: #ccc;
+  }
+  .theme-toggle .light-icon,
+  .theme-toggle .dark-icon {
+    transition: opacity 0.3s ease;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  body.light .theme-toggle .dark-icon,
+  body:not(.light) .theme-toggle .light-icon {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
 </style>
 
 <script>
