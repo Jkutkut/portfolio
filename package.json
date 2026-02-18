@@ -12,7 +12,10 @@
     "prepareCommit": "${EDITOR} package.json && npm i --package-lock-only && git add -N . && git add -p"
   },
   "dependencies": {
-    "astro": "^5.9.2",
-    "marked": "^15.0.12"
+    "@astrojs/react": "^4.3.0",
+    "astro": "^5.11.1",
+    "marked": "^15.0.12",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   }
 }
